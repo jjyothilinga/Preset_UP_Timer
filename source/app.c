@@ -5,7 +5,7 @@
 #include "eep.h"
 
 
-#define NO_OF_DIGITS	(0X06)
+#define NO_OF_DIGITS	(0X04)
 
 
 /*
@@ -16,11 +16,11 @@
 *------------------------------------------------------------------------------
 */
 UINT8 txBuffer[6] = {0};
-UINT8 displayBuffer[6] = {0};
-UINT8 targetBuffer[6]  = {0};
-UINT8 max[6] = {0x39,0x35,0x39,0x35,0x39,0x39};
+UINT8 displayBuffer[NO_OF_DIGITS] = {0};
+UINT8 targetBuffer[NO_OF_DIGITS]  = {0};
+UINT8 max[NO_OF_DIGITS] = {0x39,0x35,0x39,0x39};
 UINT8 readTimeDateBuffer[6] = {0};
-UINT8 writeTimeDateBuffer[] = {0X50, 0X59, 0X72, 0X03, 0x027, 0X12, 0X13};
+UINT8 writeTimeDateBuffer[] = {0X50, 0X59, 0X00, 0X03, 0x027, 0X12, 0X13};
 extern BOOL portB_intFlag;
 extern UINT8 portB_currentData;
 
@@ -45,7 +45,8 @@ typedef struct _App
 	UINT8 digitIndexPBpressed;
 	UINT8 setPBpressed;
 	UINT8 blinkIndex;
-	UINT8 hooter;
+	BOOL hooter_set;
+	BOOL hooter_reset;
 
 }APP;
 
@@ -71,7 +72,7 @@ void APP_init( void )
 
 	//	writeTimeDateBuffer[2] = SetHourMode(0X09,1,1);
 	//Set Date and Time
-//	WriteRtcTimeAndDate(writeTimeDateBuffer);
+	//WriteRtcTimeAndDate(writeTimeDateBuffer);
 
 	for(i = 0 ; i < NO_OF_DIGITS;i++)
 	{
@@ -115,6 +116,7 @@ void APP_init( void )
 		break;
 	}
 
+
 	HOOTER = Read_b_eep (EEPROM_STATE_ADDRESS + 1);  
 	Busy_eep();
 
@@ -153,6 +155,8 @@ void APP_task( void )
 
 				//Turn off hooter
 				HOOTER = RESET;
+				app.hooter_reset = FALSE;
+
 				app.Input_Recieved = TRUE;
 				
 				//Store the state
@@ -194,10 +198,10 @@ void APP_task( void )
 
 			case SETTING:
 
-			CLOCK_LED = 0;
+			CLOCK_LED = 1;
 
 			// Code to handle Digit index PB
-			if ((LinearKeyPad_getKeyState(DIGIT_INDEX_PB ) == 1) && (app.digitIndexPBpressed == FALSE ))
+			if ((LinearKeyPad_getKeyState(DIGIT_INDEX_PB ) == TRUE) && (app.digitIndexPBpressed == FALSE ))
 			{
 				app.blinkIndex++;
 
@@ -208,7 +212,7 @@ void APP_task( void )
 
 				app.digitIndexPBpressed = TRUE;
 			}
-			else if ((LinearKeyPad_getKeyState(DIGIT_INDEX_PB ) == 0) && (app.digitIndexPBpressed == TRUE ))
+			else if ((LinearKeyPad_getKeyState(DIGIT_INDEX_PB ) == FALSE) && (app.digitIndexPBpressed == TRUE ))
 				app.digitIndexPBpressed = FALSE;
 
 			// Code to handle increment PB
@@ -223,7 +227,7 @@ void APP_task( void )
 				app.incrementPBpressed = TRUE;
 
 			}
-			else if ((LinearKeyPad_getKeyState(INCREMENT_PB) == 0) && (app.incrementPBpressed == TRUE ))
+			else if ((LinearKeyPad_getKeyState(INCREMENT_PB) == FALSE) && (app.incrementPBpressed == TRUE ))
 				app.incrementPBpressed = FALSE;
 
 			
@@ -235,7 +239,7 @@ void APP_task( void )
 				//Display the preset value on the display
 				DigitDisplay_updateBuffer(targetBuffer);
 				CLOCK_LED = 1;
-				app.setPBpressed = FALSE;
+				app.setPBpressed = TRUE;
 
 				//Store preset value in the EEPROM
 				for(i = 0; i < NO_OF_DIGITS ; i++ )
@@ -258,7 +262,7 @@ void APP_task( void )
 			
 			case STOP:
 
-				app.hooter = 0;
+				app.hooter_set = FALSE;
 		
 				// On start PB press change the state into START
 				if((LinearKeyPad_getKeyState(START_PB) == TRUE) && (app.Input_Recieved == FALSE))
@@ -274,6 +278,13 @@ void APP_task( void )
 				else if( (LinearKeyPad_getKeyState(START_PB) == FALSE) && (app.Input_Recieved == TRUE))
 				{
 					app.Input_Recieved = FALSE;				
+				}
+
+				if((LinearKeyPad_getKeyState(HOOTER_OFF_PB) == TRUE) && (app.hooter_reset == TRUE))
+				{
+					HOOTER = RESET;
+					Write_b_eep( EEPROM_STATE_ADDRESS + 1 , HOOTER);
+					Busy_eep( );
 				}
 
 				//Read RTC data and store it in buffer
@@ -292,18 +303,21 @@ void APP_task( void )
 				}
 
 				//Check RTC data with preset value and set HOOTER
-				for(i = 0 ; i < NO_OF_DIGITS ; i++)
+				if(app.hooter_reset == FALSE)
 				{
-					if(targetBuffer[i] > '0')
-						if(targetBuffer[i] != displayBuffer[i])
-							app.hooter = SET;
-
+					for(i = 0 ; i < NO_OF_DIGITS ; i++)
+					{
+						if(targetBuffer[i] > '0')
+							if(targetBuffer[i] != displayBuffer[i])
+								app.hooter_set = TRUE;
+					}
 				}
 
 				//If RTC data matches preset value set HOOTER and store HOOTER state
-				if(app.hooter == SET)
+				if((app.hooter_set == FALSE) && (app.hooter_reset == FALSE))
 				{
 					HOOTER = SET;
+					app.hooter_reset = TRUE;
 					Write_b_eep( EEPROM_STATE_ADDRESS + 1 , HOOTER);
 					Busy_eep( );
 				}
@@ -332,11 +346,16 @@ void APP_conversion(void)
 	volatile UINT8 temp = 0, temp1, temp2;
 	UINT8 i;
 
-	//Store the day & multiply with the hours
-	temp = readTimeDateBuffer[3] - 1;
-	temp *= 24;
 
-	//Convert BCD2HEX
+
+	if(readTimeDateBuffer[2] > 0)
+	{
+		temp = '6';
+	}
+	else 
+		temp = '0';
+
+/*	//Convert BCD2HEX
 	temp1 = ( (readTimeDateBuffer[2] & 0XF0) >> 4) * 10; 
 	temp1 += (readTimeDateBuffer[2] & 0X0F);
 	temp += temp1;
@@ -344,8 +363,8 @@ void APP_conversion(void)
 	//Convert HEX2BCD
 	temp2 = HEX2BCD(temp);
 	
-
-	if((temp == 0X99) && (readTimeDateBuffer[1] == 0X59) &&
+*/
+	if((readTimeDateBuffer[2] == 0x01) && (readTimeDateBuffer[1] == 0X39) &&
 		(readTimeDateBuffer[0] == 0X59))
 	{
 		//Store current data into EEPROM
@@ -360,17 +379,15 @@ void APP_conversion(void)
 	displayBuffer[0] = (readTimeDateBuffer[0] & 0X0F) + '0';        //Seconds LSB
 	displayBuffer[1] = ((readTimeDateBuffer[0] & 0XF0) >> 4) + '0'; //Seconds MSB
 	displayBuffer[2] = (readTimeDateBuffer[1] & 0X0F) + '0';        //Minute LSB
-	displayBuffer[3] = ((readTimeDateBuffer[1] & 0XF0) >> 4) + '0'; //Minute MSB
+	displayBuffer[3] = ((readTimeDateBuffer[1] & 0XF0) >> 4) + temp; //Minute MSB
 
-	displayBuffer[4] = (temp2 & 0X0F) + '0';		//Hour LSB
-	displayBuffer[5] = ((temp2 & 0XF0) >> 4) + '0'; //Hour MSB 
 }
 
 
 void APP_resetDisplayBuffer(void)
 {
 	int i ;
-	for(i = 0; i < 6; i++)			//reset all digits
+	for(i = 0; i < 4; i++)			//reset all digits
 	{
 		displayBuffer[i] = '0';
 	}
@@ -380,7 +397,7 @@ void APP_resetDisplayBuffer(void)
 void APP_resetTargetBuffer(void)
 {
 	int i ;
-	for(i = 0; i < 6; i++)			//reset all digits
+	for(i = 0; i < 4; i++)			//reset all digits
 	{
 		targetBuffer[i] = '0';
 	}
@@ -392,7 +409,6 @@ void APP_updateRTC(void)
 {
 	writeTimeDateBuffer[0] = ((displayBuffer[1] - '0') << 4) | (displayBuffer[0] - '0'); //store seconds
 	writeTimeDateBuffer[1] = ((displayBuffer[3] - '0') << 4) | (displayBuffer[2] - '0'); //store minutes
-	writeTimeDateBuffer[2] = ((displayBuffer[5] - '0') << 4) | (displayBuffer[4] - '0'); //store Hours
 
 #if defined (MODE_12HRS)
 	//Set 6th bit of Hour register to enable 12 hours mode.

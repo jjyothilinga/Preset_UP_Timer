@@ -299,6 +299,7 @@ static void readKeyPadPort()
 	portValue[1] = KEYPAD_PORT_1;
 	portValue[2] = KEYPAD_PORT_2;
 	portValue[3] = KEYPAD_PORT_3;
+	portValue[4] = KEYPAD_PORT_4;
 
 
 }

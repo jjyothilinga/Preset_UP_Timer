@@ -69,10 +69,6 @@
 #define		DIGIT_SEL_C_DIRECTION		TRISAbits.TRISA2
 #define		DIGIT_SEL_D					PORTAbits.RA3			// demux digit sel D
 #define		DIGIT_SEL_D_DIRECTION		TRISAbits.TRISA3
-#define		DIGIT_SEL_E					PORTAbits.RA4			// demux digit sel B
-#define		DIGIT_SEL_E_DIRECTION		TRISAbits.TRISA4
-#define		DIGIT_SEL_F					PORTAbits.RA5			// demux digit sel C
-#define		DIGIT_SEL_F_DIRECTION		TRISAbits.TRISA5
 
 
 

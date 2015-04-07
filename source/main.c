@@ -161,7 +161,7 @@ void main(void)
 	InitializeRtc();	//RTC Initialization
 	LinearKeyPad_init();
 
-	DigitDisplay_init(6); //Digit Display initialization
+	DigitDisplay_init(4); //Digit Display initialization
 
 	TMR0_init(TICK_PERIOD,0);		//initialize timer0
 	TMR1_init(DIGIT_REFRESH_PERIOD,DigitDisplay_task);	// Timer1 initialization

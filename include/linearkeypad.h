@@ -94,6 +94,7 @@ typedef enum KEY
 	KEY1,
 	KEY2,
 	KEY3,
+	KEY4,
 
 	MAX_KEYS
 }KEY;

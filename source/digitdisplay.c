@@ -410,8 +410,7 @@ static void writeToDisplayPort( UINT8 value )
 	DIGIT_SEL_B = 1;
 	DIGIT_SEL_C = 1;
 	DIGIT_SEL_D = 1;
-	DIGIT_SEL_E = 1;
-	DIGIT_SEL_F = 1;
+
 
 	Delay10us(1);
 	DISPLAY_PORT = ~value;
@@ -435,16 +434,7 @@ static void writeToDisplayPort( UINT8 value )
 		
    		break;
 
-		case 4:
 
-			DIGIT_SEL_E = 0;
-		break;
-		
-		case 5:
-
-			DIGIT_SEL_F = 0;
-		break;
-		
 
 		default:
 		break;
@@ -460,8 +450,6 @@ static void writeToDisplayPort( UINT8 value )
 	DIGIT_SEL_B = 0;
 	DIGIT_SEL_C = 0;
 	DIGIT_SEL_D = 0;
-	DIGIT_SEL_E = 0;
-	DIGIT_SEL_F = 0;
 
 	Delay10us(1);
 	DISPLAY_PORT = value;
@@ -485,15 +473,7 @@ static void writeToDisplayPort( UINT8 value )
 		
    		break;
 
-		case 4:
 
-			DIGIT_SEL_E = 1;
-		break;
-		
-		case 5:
-
-			DIGIT_SEL_F = 1;
-		break;
 
 		default:
 		break;
