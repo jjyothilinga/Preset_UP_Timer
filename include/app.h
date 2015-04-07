@@ -22,10 +22,12 @@ typedef enum
 
 typedef enum
 {
-	INCREMENT = 0X03,
-	DIGIT_INDEX = 0X02
-	
-}CLOCK_SETTING_PBS;
+	START_PB = 0,
+	MODE_CHANGE_PB,
+	DIGIT_INDEX_PB,
+	INCREMENT_PB,
+	HOOTER_OFF_PB
+}PBS;
 
 
 typedef enum

@@ -144,53 +144,60 @@ void APP_task( void )
 			case START:
 			CLOCK_LED = 1;
 
-			if ((LinearKeyPad_getKeyState(0) == TRUE)&& (app.Input_Recieved == 0))
+			if ((LinearKeyPad_getKeyState(START_PB) == TRUE)&& (app.Input_Recieved == FALSE))
 			{
+				//Reset buffer and RTC
 				APP_resetDisplayBuffer();
 				DigitDisplay_updateBuffer(displayBuffer);
 				APP_updateRTC();
-				
-				app.Input_Recieved = 1;
 
+				//Turn off hooter
+				HOOTER = RESET;
+				app.Input_Recieved = TRUE;
+				
+				//Store the state
 				Write_b_eep( EEPROM_STATE_ADDRESS , STOP);
 				Busy_eep( );
 		
+				//Change the state to STOP state
 				app.state = STOP;
 				
 			}
-			else if ((LinearKeyPad_getKeyState(1) == TRUE)&& (app.setPBpressed == 0))
+			else if ((LinearKeyPad_getKeyState(MODE_CHANGE_PB) == TRUE)&& (app.setPBpressed == FALSE))
 			{
+				//Reset Target buffer which is used to hold preset data
 				APP_resetTargetBuffer();
+
+				//Blink first digit in the display
 				app.blinkIndex = 0;
 				DigitDisplay_updateBuffer(targetBuffer);
 				DigitDisplay_blinkOn_ind(500, app.blinkIndex);
 
-				app.setPBpressed = 1;
+				app.setPBpressed = TRUE;
 
+				//Change state to setting state
 				app.state = SETTING;
 			
 			}
 			
 
-			if(LinearKeyPad_getKeyState(0) == FALSE)
+			if(LinearKeyPad_getKeyState(START_PB) == FALSE)
 			{
-				app.Input_Recieved = 0;
+				app.Input_Recieved = FALSE;
 			
 			}
 
-			if ((LinearKeyPad_getKeyState(1) == 0)&& (app.setPBpressed == 1))
-				app.setPBpressed = 0;
+			if ((LinearKeyPad_getKeyState(MODE_CHANGE_PB) == 0)&& (app.setPBpressed == TRUE))
+				app.setPBpressed = FALSE;
 
 			break;
 
 			case SETTING:
 
-					CLOCK_LED = 0;
+			CLOCK_LED = 0;
 
-		//	DigitDisplay_blinkOn_ind(500, app.blinkIndex);
-
-			// CODE TO HANDLE DIGIT INDEX PB
-			if ((LinearKeyPad_getKeyState(DIGIT_INDEX ) == 1) && (app.digitIndexPBpressed == FALSE ))
+			// Code to handle Digit index PB
+			if ((LinearKeyPad_getKeyState(DIGIT_INDEX_PB ) == 1) && (app.digitIndexPBpressed == FALSE ))
 			{
 				app.blinkIndex++;
 
@@ -201,11 +208,11 @@ void APP_task( void )
 
 				app.digitIndexPBpressed = TRUE;
 			}
-			else if ((LinearKeyPad_getKeyState(DIGIT_INDEX ) == 0) && (app.digitIndexPBpressed == TRUE ))
+			else if ((LinearKeyPad_getKeyState(DIGIT_INDEX_PB ) == 0) && (app.digitIndexPBpressed == TRUE ))
 				app.digitIndexPBpressed = FALSE;
 
-			// CODE TO HANDLE INCREMENT PB
-			if ((LinearKeyPad_getKeyState(INCREMENT) == 1) && (app.incrementPBpressed == FALSE ))
+			// Code to handle increment PB
+			if ((LinearKeyPad_getKeyState(INCREMENT_PB) == 1) && (app.incrementPBpressed == FALSE ))
 			{
 				targetBuffer[app.blinkIndex]++;
 				if(targetBuffer[app.blinkIndex] > max[app.blinkIndex])
@@ -216,38 +223,47 @@ void APP_task( void )
 				app.incrementPBpressed = TRUE;
 
 			}
-			else if ((LinearKeyPad_getKeyState(INCREMENT) == 0) && (app.incrementPBpressed == TRUE ))
+			else if ((LinearKeyPad_getKeyState(INCREMENT_PB) == 0) && (app.incrementPBpressed == TRUE ))
 				app.incrementPBpressed = FALSE;
 
-			if ((LinearKeyPad_getKeyState(1) == TRUE)&& (app.setPBpressed == 0))
+			
+			if ((LinearKeyPad_getKeyState(MODE_CHANGE_PB) == TRUE)&& (app.setPBpressed == FALSE))
 			{
+				//Turn of blink
 				DigitDisplay_blinkOff();
+
+				//Display the preset value on the display
 				DigitDisplay_updateBuffer(targetBuffer);
 				CLOCK_LED = 1;
-				app.setPBpressed = 1;
+				app.setPBpressed = FALSE;
 
+				//Store preset value in the EEPROM
 				for(i = 0; i < NO_OF_DIGITS ; i++ )
 				{
 					Write_b_eep( EEPROM_TARGET_ADDRESS + i ,targetBuffer[i] );
 					Busy_eep( );
 				}
+
+				//Store state in the EEPROM
 				Write_b_eep( EEPROM_STATE_ADDRESS , START);
 				Busy_eep( );
-
+				//Switch state
 				app.state = START;	
 				
 			}
-			else if ((LinearKeyPad_getKeyState(1) == 0)&& (app.setPBpressed == 1))
-				app.setPBpressed = 0;
+			else if ((LinearKeyPad_getKeyState(MODE_CHANGE_PB) == FALSE)&& (app.setPBpressed == TRUE))
+				app.setPBpressed = FALSE;
 				
 			break;
 			
 			case STOP:
+
 				app.hooter = 0;
 		
-				if((LinearKeyPad_getKeyState(0) == TRUE) && (app.Input_Recieved == 0))
+				// On start PB press change the state into START
+				if((LinearKeyPad_getKeyState(START_PB) == TRUE) && (app.Input_Recieved == FALSE))
 				{
-					app.Input_Recieved = 1;
+					app.Input_Recieved = TRUE;
 	
 					Write_b_eep( EEPROM_STATE_ADDRESS , START);
 					Busy_eep( );
@@ -255,58 +271,54 @@ void APP_task( void )
 					app.state = START;
 					break;
 				}
-				else if( (LinearKeyPad_getKeyState(0) == FALSE) && (app.Input_Recieved == 1))
+				else if( (LinearKeyPad_getKeyState(START_PB) == FALSE) && (app.Input_Recieved == TRUE))
 				{
-					app.Input_Recieved = 0;
-				
+					app.Input_Recieved = FALSE;				
 				}
 
-
-				ReadRtcTimeAndDate(readTimeDateBuffer);  //Read the data from RTC
-				APP_conversion(); // Separate the higher and lower nibble and store it into the display buffer 
-	
+				//Read RTC data and store it in buffer
+				ReadRtcTimeAndDate(readTimeDateBuffer);  
+				//Convert RTC data in to ASCII
+				// Separate the higher and lower nibble and store it into the display buffer 
+				APP_conversion(); 
+				//Update digit display buffer with the current data of RTC
 				DigitDisplay_updateBuffer(displayBuffer);
 
+				//Store the current RTC data into EEPROM
 				for(i = 0 ; i <  NO_OF_DIGITS  ; i++)
 				{
 					Write_b_eep( (EEPROM_RTC_ADDRESS + i) , displayBuffer[i]);
 					Busy_eep( );
 				}
 
-
+				//Check RTC data with preset value and set HOOTER
 				for(i = 0 ; i < NO_OF_DIGITS ; i++)
 				{
 					if(targetBuffer[i] > '0')
 						if(targetBuffer[i] != displayBuffer[i])
-							app.hooter = 1;
+							app.hooter = SET;
 
 				}
 
-
-				if(app.hooter == 0)
+				//If RTC data matches preset value set HOOTER and store HOOTER state
+				if(app.hooter == SET)
 				{
-					HOOTER = 1;
+					HOOTER = SET;
 					Write_b_eep( EEPROM_STATE_ADDRESS + 1 , HOOTER);
 					Busy_eep( );
-					Write_b_eep( EEPROM_STATE_ADDRESS , START);
-					Busy_eep( );
-					app.state = START;
-				}
-				else
-				{ 
-					HOOTER = 0;
 				}
 
 
 
-	#if defined (RTC_DATA_ON_UART)
-					for(i = 0; i < 7; i++)			
-					{
-						txBuffer[i] = readTimeDateBuffer[i];  //store time and date 
-					}
-					
-					COM_txBuffer(txBuffer, 7);
-	#endif	
+
+#if defined (RTC_DATA_ON_UART)
+				for(i = 0; i < 7; i++)			
+				{
+					txBuffer[i] = readTimeDateBuffer[i];  //store time and date 
+				}
+				
+				COM_txBuffer(txBuffer, 7);
+#endif	
 
 				break;			
 		}
