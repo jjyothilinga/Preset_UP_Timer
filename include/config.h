@@ -65,9 +65,10 @@ enum
 /*------------------------------------
  *	APP Configuration
  *-----------------------------------*/
-#define EEPROM_STATE_ADDRESS (0x00)
-#define EEPROM_TARGET_ADDRESS (0x10)
-#define EEPROM_RTC_ADDRESS (0x20)
+#define EEPROM_STATE_ADDRESS 	(0x00)
+#define EEPROM_HOOTER_ADDRESS 	(0x01)
+#define EEPROM_PRESET_ADDRESS 	(0x10)
+#define EEPROM_RTC_ADDRESS 		(0x20)
 //#define RTC_DATA_ON_UART
 //#define MODE_12HRS
 

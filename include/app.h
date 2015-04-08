@@ -6,9 +6,9 @@
 
 typedef enum 
 {
-	START = 0,
-	STOP,
-	SETTING
+	HALT_STATE = 0,
+	COUNT_STATE,
+	SETTING_STATE
 }APP_STATE;
 
 
@@ -22,7 +22,8 @@ typedef enum
 
 typedef enum
 {
-	START_PB = 0,
+	HALT_PB = 0,
+	COUNT_PB = 0,
 	MODE_CHANGE_PB,
 	DIGIT_INDEX_PB,
 	INCREMENT_PB,

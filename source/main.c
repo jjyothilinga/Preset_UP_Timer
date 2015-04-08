@@ -192,7 +192,7 @@ void main(void)
 			count++;
 		}
 		
-		if(count >= 2)
+		if(count >= 50)
 		{
 			APP_task();	
 			count = 0;
