@@ -41,7 +41,7 @@ typedef struct _App
 	APP_STATE state;				//maintain the state 
 	UINT8 blinkIndex;				//index to blink the DIGIT
 	UINT8 hooter_set;				//indicator for HOOTER on
-	BOOL hooter_reset;				//indicator for HOOTER off
+	UINT8 hooter_reset;				//indicator for HOOTER off
 	UINT16 presetValue;
 	UINT16 rtcValue;
 }APP;
@@ -95,7 +95,10 @@ void APP_init( void )
 	APP_updateRTC();
 
 	//Maintain the HOOTER state from EPROM
-	app.hooter_reset = Read_b_eep (EEPROM_HOOTER_ADDRESS);  
+	HOOTER = Read_b_eep (EEPROM_HOOTER_ADDRESS);  
+	Busy_eep();
+
+	app.hooter_reset = Read_b_eep (EEPROM_HOOTER_ADDRESS + 1);  
 	Busy_eep();
 
 	CLOCK_LED = 1;
@@ -244,8 +247,20 @@ void APP_task( void )
 				//Read RTC data and store it in buffer
 				ReadRtcTimeAndDate(readTimeDateBuffer);  
 
+				//Convert RTC data in to ASCII
+				// Separate the higher and lower nibble and store it into the display buffer 
+				APP_conversion(); 
 
-				app.rtcValue = (UINT16)( readTimeDateBuffer[0] +(readTimeDateBuffer[1]*60) );//+ (readTimeDateBuffer[2]*3600));	
+				if(readTimeDateBuffer[2] > 0)
+				{
+					displayBuffer[3] += '6';
+				}
+				else 
+				{
+					displayBuffer[3] +=  '0';
+				}
+
+				app.rtcValue = (UINT16)(((	displayBuffer[3]- '0' )* 10 )+ ( displayBuffer[2] - '0') )* 60 +((( displayBuffer[1]- '0' )* 10 )+ ( displayBuffer[0] - '0'));
 			
 
 				if((app.hooter_reset == FALSE) && ( app.rtcValue >= app.presetValue ) )
@@ -259,13 +274,11 @@ void APP_task( void )
 				{
 					HOOTER = SET;
 					app.hooter_reset = TRUE;
-					Write_b_eep( EEPROM_HOOTER_ADDRESS, app.hooter_reset);
+					Write_b_eep( EEPROM_HOOTER_ADDRESS, HOOTER);
+					Busy_eep( );
+					Write_b_eep( (EEPROM_HOOTER_ADDRESS + 1) , app.hooter_reset);
 					Busy_eep( );
 				}
-
-				//Convert RTC data in to ASCII
-				// Separate the higher and lower nibble and store it into the display buffer 
-				APP_conversion(); 
 	
 
 				//Store the current RTC data into EEPROM
@@ -275,14 +288,6 @@ void APP_task( void )
 					Busy_eep( );
 				}
 
-				if(readTimeDateBuffer[2] > 0)
-				{
-					displayBuffer[3] += '6';
-				}
-				else 
-				{
-					displayBuffer[3] +=  '0';
-				}
 
 
 				//Update digit display buffer with the current data of RTC
