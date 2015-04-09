@@ -43,7 +43,7 @@ typedef struct _App
 	UINT8 hooter_set;				//indicator for HOOTER on
 	BOOL hooter_reset;				//indicator for HOOTER off
 	UINT16 presetValue;
-
+	UINT16 rtcValue;
 }APP;
 
 #pragma idata app_data
@@ -65,20 +65,20 @@ APP app = {0};
 void APP_init( void )
 {
 	UINT8 i;
-	UINT16 temp;
-	UINT16 temp1 = 60;
 
 	//	writeTimeDateBuffer[2] = SetHourMode(0X09,1,1);
 	//Set Date and Time
 	//WriteRtcTimeAndDate(writeTimeDateBuffer);
 
-
-	//Read the value of TARGET TIME from EPROM
+	//Read the value of PRESET TIME from EPROM
 	for(i = 0 ; i < NO_OF_DIGITS;i++)
 	{
 		presetBuffer[i] = Read_b_eep (EEPROM_PRESET_ADDRESS  + i);  
 		Busy_eep();	
 	}
+
+	app.presetValue = (UINT16)(((presetBuffer[3]- '0' )* 10 )+ ( presetBuffer[2] - '0') )* 60 +(((presetBuffer[1]- '0' )* 10 )+ (presetBuffer[0] - '0'));
+	
 	//Maintain the state from EPROM
 	app.state = Read_b_eep (EEPROM_STATE_ADDRESS);  
 	Busy_eep();
@@ -91,25 +91,12 @@ void APP_init( void )
 		Busy_eep();	
 	}
 
-	if(displayBuffer[3] > '6')
-		displayBuffer[3] -='6';
-
 	//update that value on RTC
 	APP_updateRTC();
 
-/*
-	temp = ((presetBuffer[2] - '0') | (presetBuffer[3] - '0' << 4));
-
-	app.presetValue  = (presetBuffer[0] - '0') | (presetBuffer[1] - '0' << 4);
-	
-	temp = app.presetValue * temp1;
-*/
-
 	//Maintain the HOOTER state from EPROM
-	HOOTER = Read_b_eep (EEPROM_HOOTER_ADDRESS);  
+	app.hooter_reset = Read_b_eep (EEPROM_HOOTER_ADDRESS);  
 	Busy_eep();
-				
-	app.hooter_reset = FALSE;
 
 	CLOCK_LED = 1;
 
@@ -133,7 +120,7 @@ void APP_init( void )
 void APP_task( void )
 {
 	UINT8 i;
-	unsigned long compare;
+	UINT8 temp = 0 ;
 
 		switch(app.state)
 		{
@@ -210,6 +197,7 @@ void APP_task( void )
 				//Display the preset value on the display
 				DigitDisplay_updateBuffer(presetBuffer);
 
+
 				//Store preset value in the EEPROM
 				for(i = 0; i < NO_OF_DIGITS ; i++ )
 				{
@@ -217,6 +205,8 @@ void APP_task( void )
 					Busy_eep( );
 				}
 
+				app.presetValue = (UINT16)(((presetBuffer[3]- '0' )* 10 )+ ( presetBuffer[2] - '0') )* 60 +(((presetBuffer[1]- '0' )* 10 )+ (presetBuffer[0] - '0'));
+				
 				//Store state in the EEPROM
 				Write_b_eep( EEPROM_STATE_ADDRESS , HALT_STATE);
 				Busy_eep( );
@@ -230,8 +220,7 @@ void APP_task( void )
 			
 			case COUNT_STATE:
 
-				app.hooter_set = 0;
-			
+				app.hooter_set = FALSE;
 	
 				// On start PB press change the state into START
 				if(LinearKeyPad_getKeyState(HALT_PB) == TRUE)
@@ -252,35 +241,33 @@ void APP_task( void )
 					Busy_eep( );
 				}
 
-
 				//Read RTC data and store it in buffer
 				ReadRtcTimeAndDate(readTimeDateBuffer);  
-				//Convert RTC data in to ASCII
-				// Separate the higher and lower nibble and store it into the display buffer 
-				APP_conversion(); 
-				//Update digit display buffer with the current data of RTC
-				DigitDisplay_updateBufferPartial(displayBuffer , 0, 4);
 
 
-			//	compare = readTimeDateBuffer[0] + readTimeDateBuffer[1]*60 + readTimeDateBuffer[2]*60;	
+				app.rtcValue = (UINT16)( readTimeDateBuffer[0] +(readTimeDateBuffer[1]*60) );//+ (readTimeDateBuffer[2]*3600));	
 			
-				for(i = 0 ; i < 4 ; i++)
+
+				if((app.hooter_reset == FALSE) && ( app.rtcValue >= app.presetValue ) )
 				{
-					if(displayBuffer[i] >= presetBuffer[i])
-					{
-						++app.hooter_set;
-					}
+					app.hooter_set = TRUE;
+
 				}
+
 				
-				if(( app.hooter_set == 4) && (app.hooter_reset == FALSE))
+				if( app.hooter_set == TRUE) 
 				{
 					HOOTER = SET;
 					app.hooter_reset = TRUE;
-					Write_b_eep( EEPROM_HOOTER_ADDRESS, HOOTER);
+					Write_b_eep( EEPROM_HOOTER_ADDRESS, app.hooter_reset);
 					Busy_eep( );
 				}
 
-				app.hooter_set = 0;
+				//Convert RTC data in to ASCII
+				// Separate the higher and lower nibble and store it into the display buffer 
+				APP_conversion(); 
+	
+
 				//Store the current RTC data into EEPROM
 				for(i = 0 ; i < 6  ; i++)
 				{
@@ -288,6 +275,32 @@ void APP_task( void )
 					Busy_eep( );
 				}
 
+				if(readTimeDateBuffer[2] > 0)
+				{
+					displayBuffer[3] += '6';
+				}
+				else 
+				{
+					displayBuffer[3] +=  '0';
+				}
+
+
+				//Update digit display buffer with the current data of RTC
+				DigitDisplay_updateBufferPartial(displayBuffer , 0, 4);
+
+
+				if((readTimeDateBuffer[2] == 0x01) && (readTimeDateBuffer[1] == 0X39) &&
+					(readTimeDateBuffer[0] == 0X59))
+				{
+			
+					//Change the state
+					Write_b_eep( EEPROM_STATE_ADDRESS , HALT_STATE);
+					Busy_eep( );
+			
+					app.state = HALT_STATE;	
+
+					return;
+				}
 
 #if defined (RTC_DATA_ON_UART)
 				for(i = 0; i < 7; i++)			
@@ -306,35 +319,13 @@ void APP_task( void )
 
 void APP_conversion(void)
 {
-
-	volatile UINT8 temp = 0, temp1, temp2;
-	UINT8 i;
-
-
-
-	if(readTimeDateBuffer[2] > 0)
-	{
-		temp = '6';
-	}
-	else 
-		temp = '0';
-
-	if((readTimeDateBuffer[2] == 0x01) && (readTimeDateBuffer[1] == 0X39) &&
-		(readTimeDateBuffer[0] == 0X59))
-	{
-		//Store current data into EEPROM
-
-		//Change the state
-		Write_b_eep( EEPROM_STATE_ADDRESS , HALT_STATE);
-		Busy_eep( );
-
-		app.state = HALT_STATE;	
-	}
 			
 	displayBuffer[0] = (readTimeDateBuffer[0] & 0X0F) + '0';        //Seconds LSB
 	displayBuffer[1] = ((readTimeDateBuffer[0] & 0XF0) >> 4) + '0'; //Seconds MSB
 	displayBuffer[2] = (readTimeDateBuffer[1] & 0X0F) + '0';        //Minute LSB
-	displayBuffer[3] = ((readTimeDateBuffer[1] & 0XF0) >> 4) + temp; //Minute MSB
+	displayBuffer[3] = ((readTimeDateBuffer[1] & 0XF0) >> 4) ; 		//Minute MSB
+	displayBuffer[4] = (readTimeDateBuffer[2] & 0X0F) + '0';        //Minute LSB
+	displayBuffer[5] = ((readTimeDateBuffer[2] & 0X30) >> 4) ; 		//Minute MSB
 
 }
 
@@ -366,10 +357,6 @@ void APP_updateRTC(void)
 	writeTimeDateBuffer[1] = ((displayBuffer[3] - '0') << 4) | (displayBuffer[2] - '0'); //store minutes
 	writeTimeDateBuffer[2] = ((displayBuffer[5] - '0') << 4) | (displayBuffer[4] - '0'); //store minutes
 
-#if defined (MODE_12HRS)
-	//Set 6th bit of Hour register to enable 12 hours mode.
-	writeTimeDateBuffer[2] |= 0x40;
-#endif
 	WriteRtcTimeAndDate(writeTimeDateBuffer);  //update RTC
 }
 
