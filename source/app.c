@@ -42,7 +42,7 @@ typedef struct _App
 	UINT8 blinkIndex;				//index to blink the DIGIT
 	UINT8 hooter_set;				//indicator for HOOTER on
 	UINT8 hooter_reset;				//indicator for HOOTER off
-	UINT16 presetValue;
+	UINT16 presetValue;				// store
 	UINT16 rtcValue;
 }APP;
 
@@ -97,10 +97,11 @@ void APP_init( void )
 	//Maintain the HOOTER state from EPROM
 	HOOTER = Read_b_eep (EEPROM_HOOTER_ADDRESS);  
 	Busy_eep();
-
+	//Maintain the hooter_reset value from EPROM
 	app.hooter_reset = Read_b_eep (EEPROM_HOOTER_ADDRESS + 1);  
 	Busy_eep();
 
+	//ON DOT_CONTROL leds
 	CLOCK_LED = 1;
 
 
@@ -123,13 +124,13 @@ void APP_init( void )
 void APP_task( void )
 {
 	UINT8 i;
-	UINT8 temp = 0 ;
+
 
 		switch(app.state)
 		{
 			case HALT_STATE:
 			
-			//Check the keypress Status of START PB 
+			//Check the keypress Status of COUNT_PB 
 			if (LinearKeyPad_getKeyState(COUNT_PB) == TRUE)
 			{
 				//Reset buffer and RTC
@@ -149,6 +150,7 @@ void APP_task( void )
 				app.state = COUNT_STATE;
 				
 			}
+			//Check the keypress Status of MODE_CHANGE_PB
 			else if (LinearKeyPad_getKeyState(MODE_CHANGE_PB) == TRUE)
 			{
 				//Reset Target buffer which is used to hold preset data
@@ -164,6 +166,15 @@ void APP_task( void )
 				app.state = SETTING_STATE;
 			
 			}
+
+			//Check the keypress Status of HOOTER_OFF_PB 
+			else if((LinearKeyPad_getKeyState(HOOTER_OFF_PB) == TRUE) && (app.hooter_reset == TRUE))
+				{
+					HOOTER = RESET;
+					Write_b_eep( EEPROM_HOOTER_ADDRESS, HOOTER);
+					Busy_eep( );
+				}
+
 			
 			break;
 
@@ -225,7 +236,7 @@ void APP_task( void )
 
 				app.hooter_set = FALSE;
 	
-				// On start PB press change the state into START
+				// On halt PB press change the state into HALT
 				if(LinearKeyPad_getKeyState(HALT_PB) == TRUE)
 				{
 	
@@ -236,6 +247,7 @@ void APP_task( void )
 					break;
 				}
 
+				// On hooter_off PB press change hooter state by checking condition
 
 				if((LinearKeyPad_getKeyState(HOOTER_OFF_PB) == TRUE) && (app.hooter_reset == TRUE))
 				{
@@ -251,6 +263,14 @@ void APP_task( void )
 				// Separate the higher and lower nibble and store it into the display buffer 
 				APP_conversion(); 
 
+				//Store the current RTC data into EEPROM
+				for(i = 0 ; i < 6  ; i++)
+				{
+					Write_b_eep( (EEPROM_RTC_ADDRESS + i) , displayBuffer[i]);
+					Busy_eep( );
+				}
+
+				//manipulate the MSB_min to display upto 99m:59s 
 				if(readTimeDateBuffer[2] > 0)
 				{
 					displayBuffer[3] += '6';
@@ -259,17 +279,17 @@ void APP_task( void )
 				{
 					displayBuffer[3] +=  '0';
 				}
-
+				//calculate and store the rtc value in the form of SEC
 				app.rtcValue = (UINT16)(((	displayBuffer[3]- '0' )* 10 )+ ( displayBuffer[2] - '0') )* 60 +((( displayBuffer[1]- '0' )* 10 )+ ( displayBuffer[0] - '0'));
 			
-
+				//check rtcValue and presetValue for turn ON hooter_set
 				if((app.hooter_reset == FALSE) && ( app.rtcValue >= app.presetValue ) )
 				{
 					app.hooter_set = TRUE;
 
 				}
 
-				
+				//check hooter_set for change the HOOTER STATE
 				if( app.hooter_set == TRUE) 
 				{
 					HOOTER = SET;
@@ -277,14 +297,6 @@ void APP_task( void )
 					Write_b_eep( EEPROM_HOOTER_ADDRESS, HOOTER);
 					Busy_eep( );
 					Write_b_eep( (EEPROM_HOOTER_ADDRESS + 1) , app.hooter_reset);
-					Busy_eep( );
-				}
-	
-
-				//Store the current RTC data into EEPROM
-				for(i = 0 ; i < 6  ; i++)
-				{
-					Write_b_eep( (EEPROM_RTC_ADDRESS + i) , displayBuffer[i]);
 					Busy_eep( );
 				}
 
