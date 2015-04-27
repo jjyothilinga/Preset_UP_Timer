@@ -246,13 +246,14 @@ void APP_task( void )
 				}
 
 				// On hooter_off PB press change hooter state by checking condition
-
+/*
 				if((LinearKeyPad_getKeyState(HOOTER_OFF_PB) == TRUE) && (app.hooter_reset == TRUE))
 				{
 					HOOTER = RESET;
 					Write_b_eep( EEPROM_HOOTER_ADDRESS, HOOTER);
 					Busy_eep( );
 				}
+*/
 
 				//Read RTC data and store it in buffer
 				ReadRtcTimeAndDate(readTimeDateBuffer);  
@@ -300,9 +301,8 @@ void APP_task( void )
 					Busy_eep( );
 					Write_b_eep( (EEPROM_HOOTER_ADDRESS + 1) , app.hooter_reset);
 					Busy_eep( );
+
 				}
-
-
 
 				//Update digit display buffer with the current data of RTC
 				DigitDisplay_updateBufferPartial(app.displayBuffer , 0, 4);
@@ -321,8 +321,8 @@ void APP_task( void )
 					app.prevDisplayBuffer[i] = app.displayBuffer[i];
 				}
 
-				if((readTimeDateBuffer[2] == 0x01) && (readTimeDateBuffer[1] == 0X39) &&
-					(readTimeDateBuffer[0] == 0X59))
+				if(((readTimeDateBuffer[2] == 0x01) && (readTimeDateBuffer[1] == 0X39) &&
+					(readTimeDateBuffer[0] == 0X59)) || (app.hooter_set == TRUE) )
 				{
 			
 					//Change the state
