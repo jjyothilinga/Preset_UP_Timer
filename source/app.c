@@ -16,14 +16,9 @@
 *------------------------------------------------------------------------------
 */
 UINT8 txBuffer[6] = {0};
-UINT8 displayBuffer[6] = {0};
-UINT8 presetBuffer[NO_OF_DIGITS]  = {0};
 UINT8 max[NO_OF_DIGITS] = {0x39,0x35,0x39,0x39};
 UINT8 readTimeDateBuffer[6] = {0};
 UINT8 writeTimeDateBuffer[] = {0X50, 0X59, 0X00, 0X03, 0x027, 0X12, 0X13};
-extern BOOL portB_intFlag;
-extern UINT8 portB_currentData;
-
 
 void APP_conversion(void);
 void APP_resetDisplayBuffer(void);
@@ -39,6 +34,9 @@ void APP_resetPresetBuffer(void);
 typedef struct _App
 {
 	APP_STATE state;				//maintain the state 
+	UINT8 displayBuffer[6];			//store for display the rtc value 
+	UINT8 presetBuffer[NO_OF_DIGITS];//store the preset value
+	UINT8 prevDisplayBuffer[6]; 	//store rtc value for comparision
 	UINT8 blinkIndex;				//index to blink the DIGIT
 	UINT8 hooter_set;				//indicator for HOOTER on
 	UINT8 hooter_reset;				//indicator for HOOTER off
@@ -73,11 +71,11 @@ void APP_init( void )
 	//Read the value of PRESET TIME from EPROM
 	for(i = 0 ; i < NO_OF_DIGITS;i++)
 	{
-		presetBuffer[i] = Read_b_eep (EEPROM_PRESET_ADDRESS  + i);  
+		app.presetBuffer[i] = Read_b_eep (EEPROM_PRESET_ADDRESS  + i);  
 		Busy_eep();	
 	}
 
-	app.presetValue = (UINT16)(((presetBuffer[3]- '0' )* 10 )+ ( presetBuffer[2] - '0') )* 60 +(((presetBuffer[1]- '0' )* 10 )+ (presetBuffer[0] - '0'));
+	app.presetValue = (UINT16)(((app.presetBuffer[3]- '0' )* 10 )+ ( app.presetBuffer[2] - '0') )* 60 +(((app.presetBuffer[1]- '0' )* 10 )+ (app.presetBuffer[0] - '0'));
 	
 	//Maintain the state from EPROM
 	app.state = Read_b_eep (EEPROM_STATE_ADDRESS);  
@@ -87,7 +85,7 @@ void APP_init( void )
 	//Read the STORED RTC value from EPROM
 	for(i = 0 ; i < 6 ;i++)
 	{
-		displayBuffer[i] = Read_b_eep (EEPROM_RTC_ADDRESS + i);  
+		app.displayBuffer[i] = Read_b_eep (EEPROM_RTC_ADDRESS + i);  
 		Busy_eep();	
 	}
 
@@ -135,7 +133,7 @@ void APP_task( void )
 			{
 				//Reset buffer and RTC
 				APP_resetDisplayBuffer();
-				DigitDisplay_updateBufferPartial(displayBuffer , 0, 4);
+				DigitDisplay_updateBufferPartial(app.displayBuffer , 0, 4);
 				APP_updateRTC();
 
 				//Turn off hooter
@@ -158,7 +156,7 @@ void APP_task( void )
 
 				//Blink first digit in the display
 				app.blinkIndex = 0;
-				DigitDisplay_updateBuffer(presetBuffer);
+				DigitDisplay_updateBuffer(app.presetBuffer);
 				DigitDisplay_blinkOn_ind(500, app.blinkIndex);
 
 
@@ -195,11 +193,11 @@ void APP_task( void )
 			// Code to handle increment PB
 			if (LinearKeyPad_getKeyState(INCREMENT_PB) == 1) 
 			{
-				presetBuffer[app.blinkIndex]++;
-				if(presetBuffer[app.blinkIndex] > max[app.blinkIndex])
-					presetBuffer[app.blinkIndex] = '0';			
+				app.presetBuffer[app.blinkIndex]++;
+				if(app.presetBuffer[app.blinkIndex] > max[app.blinkIndex])
+					app.presetBuffer[app.blinkIndex] = '0';			
 						
-				DigitDisplay_updateBuffer(presetBuffer);
+				DigitDisplay_updateBuffer(app.presetBuffer);
 
 			}
 			
@@ -209,17 +207,17 @@ void APP_task( void )
 				DigitDisplay_blinkOff();
 
 				//Display the preset value on the display
-				DigitDisplay_updateBuffer(presetBuffer);
+				DigitDisplay_updateBuffer(app.presetBuffer);
 
 
 				//Store preset value in the EEPROM
 				for(i = 0; i < NO_OF_DIGITS ; i++ )
 				{
-					Write_b_eep( EEPROM_PRESET_ADDRESS + i ,presetBuffer[i] );
+					Write_b_eep( EEPROM_PRESET_ADDRESS + i ,app.presetBuffer[i] );
 					Busy_eep( );
 				}
 
-				app.presetValue = (UINT16)(((presetBuffer[3]- '0' )* 10 )+ ( presetBuffer[2] - '0') )* 60 +(((presetBuffer[1]- '0' )* 10 )+ (presetBuffer[0] - '0'));
+				app.presetValue = (UINT16)(((app.presetBuffer[3]- '0' )* 10 )+ ( app.presetBuffer[2] - '0') )* 60 +(((app.presetBuffer[1]- '0' )* 10 )+ (app.presetBuffer[0] - '0'));
 				
 				//Store state in the EEPROM
 				Write_b_eep( EEPROM_STATE_ADDRESS , HALT_STATE);
@@ -264,23 +262,27 @@ void APP_task( void )
 				APP_conversion(); 
 
 				//Store the current RTC data into EEPROM
+
 				for(i = 0 ; i < 6  ; i++)
 				{
-					Write_b_eep( (EEPROM_RTC_ADDRESS + i) , displayBuffer[i]);
-					Busy_eep( );
+					if( app.displayBuffer[i] !=	app.prevDisplayBuffer[i] )
+					{
+						Write_b_eep( (EEPROM_RTC_ADDRESS + i) , app.displayBuffer[i]);
+						Busy_eep( );
+					}
 				}
 
 				//manipulate the MSB_min to display upto 99m:59s 
 				if(readTimeDateBuffer[2] > 0)
 				{
-					displayBuffer[3] += '6';
+					app.displayBuffer[3] += '6';
 				}
 				else 
 				{
-					displayBuffer[3] +=  '0';
+					app.displayBuffer[3] +=  '0';
 				}
 				//calculate and store the rtc value in the form of SEC
-				app.rtcValue = (UINT16)(((	displayBuffer[3]- '0' )* 10 )+ ( displayBuffer[2] - '0') )* 60 +((( displayBuffer[1]- '0' )* 10 )+ ( displayBuffer[0] - '0'));
+				app.rtcValue = (UINT16)(((	app.displayBuffer[3]- '0' )* 10 )+ ( app.displayBuffer[2] - '0') )* 60 +((( app.displayBuffer[1]- '0' )* 10 )+ ( app.displayBuffer[0] - '0'));
 			
 				//check rtcValue and presetValue for turn ON hooter_set
 				if((app.hooter_reset == FALSE) && ( app.rtcValue >= app.presetValue ) )
@@ -303,8 +305,21 @@ void APP_task( void )
 
 
 				//Update digit display buffer with the current data of RTC
-				DigitDisplay_updateBufferPartial(displayBuffer , 0, 4);
+				DigitDisplay_updateBufferPartial(app.displayBuffer , 0, 4);
 
+				if(readTimeDateBuffer[2] > 0)
+				{
+					app.displayBuffer[3] -= '6';
+				}
+				else 
+				{
+					app.displayBuffer[3] -=  '0';
+				}
+
+				for(	i = 0 ;	i < 6 ;	i++)
+				{
+					app.prevDisplayBuffer[i] = app.displayBuffer[i];
+				}
 
 				if((readTimeDateBuffer[2] == 0x01) && (readTimeDateBuffer[1] == 0X39) &&
 					(readTimeDateBuffer[0] == 0X59))
@@ -337,12 +352,12 @@ void APP_task( void )
 void APP_conversion(void)
 {
 			
-	displayBuffer[0] = (readTimeDateBuffer[0] & 0X0F) + '0';        //Seconds LSB
-	displayBuffer[1] = ((readTimeDateBuffer[0] & 0XF0) >> 4) + '0'; //Seconds MSB
-	displayBuffer[2] = (readTimeDateBuffer[1] & 0X0F) + '0';        //Minute LSB
-	displayBuffer[3] = ((readTimeDateBuffer[1] & 0XF0) >> 4) ; 		//Minute MSB
-	displayBuffer[4] = (readTimeDateBuffer[2] & 0X0F) + '0';        //Minute LSB
-	displayBuffer[5] = ((readTimeDateBuffer[2] & 0X30) >> 4) ; 		//Minute MSB
+	app.displayBuffer[0] = (readTimeDateBuffer[0] & 0X0F) + '0';        //Seconds LSB
+	app.displayBuffer[1] = ((readTimeDateBuffer[0] & 0XF0) >> 4) + '0'; //Seconds MSB
+	app.displayBuffer[2] = (readTimeDateBuffer[1] & 0X0F) + '0';        //Minute LSB
+	app.displayBuffer[3] = ((readTimeDateBuffer[1] & 0XF0) >> 4) ; 		//Minute MSB
+	app.displayBuffer[4] = (readTimeDateBuffer[2] & 0X0F) + '0';        //Minute LSB
+	app.displayBuffer[5] = ((readTimeDateBuffer[2] & 0X30) >> 4) ; 		//Minute MSB
 
 }
 
@@ -352,7 +367,7 @@ void APP_resetDisplayBuffer(void)
 	int i ;
 	for(i = 0; i < 6; i++)			//reset all digits
 	{
-		displayBuffer[i] = '0';
+		app.displayBuffer[i] = '0';
 	}
 }
 
@@ -362,7 +377,7 @@ void APP_resetPresetBuffer(void)
 	int i ;
 	for(i = 0; i < NO_OF_DIGITS ; i++)			//reset all digits
 	{
-		presetBuffer[i] = '0';
+		app.presetBuffer[i] = '0';
 	}
 }
 
@@ -370,9 +385,9 @@ void APP_resetPresetBuffer(void)
 
 void APP_updateRTC(void)
 {
-	writeTimeDateBuffer[0] = ((displayBuffer[1] - '0') << 4) | (displayBuffer[0] - '0'); //store seconds
-	writeTimeDateBuffer[1] = ((displayBuffer[3] - '0') << 4) | (displayBuffer[2] - '0'); //store minutes
-	writeTimeDateBuffer[2] = ((displayBuffer[5] - '0') << 4) | (displayBuffer[4] - '0'); //store minutes
+	writeTimeDateBuffer[0] = ((app.displayBuffer[1] - '0') << 4) | (app.displayBuffer[0] - '0'); //store seconds
+	writeTimeDateBuffer[1] = ((app.displayBuffer[3] - '0') << 4) | (app.displayBuffer[2] - '0'); //store minutes
+	writeTimeDateBuffer[2] = ((app.displayBuffer[5] - '0') << 4) | (app.displayBuffer[4] - '0'); //store minutes
 
 	WriteRtcTimeAndDate(writeTimeDateBuffer);  //update RTC
 }

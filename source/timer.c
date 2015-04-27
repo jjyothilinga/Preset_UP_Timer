@@ -12,7 +12,7 @@ TMR tmr[2] = { 0 , 0 };
 
 UINT16 heartBeatCount  =0 ;
 UINT16 keypadUpdate_count  =0 ;
-UINT16 comUpdateCount = 0;
+UINT16 appUpdateCount = 0;
 INT16 timeStampUpdateCount = TIMESTAMP_DURATION;
 UINT32 AppTimestamp = 0;
 
@@ -40,7 +40,7 @@ void TMR0_ISR(void)
 
 	++heartBeatCount;
 	++keypadUpdate_count;
-	++comUpdateCount;
+	++appUpdateCount;
 
 	--timeStampUpdateCount;
 

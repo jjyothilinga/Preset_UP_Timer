@@ -61,14 +61,14 @@
 
 
 // Display digit select lines
-#define		DIGIT_SEL_A					PORTAbits.RA0 			// demux digit sel A
-#define		DIGIT_SEL_A_DIRECTION		TRISAbits.TRISA0
-#define		DIGIT_SEL_B					PORTAbits.RA1			// demux digit sel B
-#define		DIGIT_SEL_B_DIRECTION		TRISAbits.TRISA1
-#define		DIGIT_SEL_C					PORTAbits.RA2			// demux digit sel C
-#define		DIGIT_SEL_C_DIRECTION		TRISAbits.TRISA2
-#define		DIGIT_SEL_D					PORTAbits.RA3			// demux digit sel D
-#define		DIGIT_SEL_D_DIRECTION		TRISAbits.TRISA3
+#define		DIGIT_SEL_A					PORTAbits.RA1 			// demux digit sel A
+#define		DIGIT_SEL_A_DIRECTION		TRISAbits.TRISA1
+#define		DIGIT_SEL_B					PORTAbits.RA2			// demux digit sel B
+#define		DIGIT_SEL_B_DIRECTION		TRISAbits.TRISA2
+#define		DIGIT_SEL_C					PORTAbits.RA3			// demux digit sel C
+#define		DIGIT_SEL_C_DIRECTION		TRISAbits.TRISA3
+#define		DIGIT_SEL_D					PORTAbits.RA4			// demux digit sel D
+#define		DIGIT_SEL_D_DIRECTION		TRISAbits.TRISA4
 
 
 

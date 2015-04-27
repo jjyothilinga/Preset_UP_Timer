@@ -41,7 +41,7 @@ enum
 
 
 #define __DISPLAY_TEST__
-#define COMMON_CATHODE
+//#define COMMON_CATHODE
 
 //#define __SIMULATION__  // keypad stimulation
 

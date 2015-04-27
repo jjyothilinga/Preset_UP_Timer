@@ -412,7 +412,7 @@ static void writeToDisplayPort( UINT8 value )
 	DIGIT_SEL_D = 1;
 
 
-	Delay10us(1);
+	Delay10us(5);
 	DISPLAY_PORT = ~value;
 	switch( digitDisplay.digitIndex )
 	{

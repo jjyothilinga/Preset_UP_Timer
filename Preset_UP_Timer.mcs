@@ -2,149 +2,6 @@
 MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
 Version=1.0
 [File000]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\app.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File001]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\board.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File002]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\digitdisplay.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File003]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\heartBeat.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File004]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\i2c_driver.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File005]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\interruptvector.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File006]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\linearkeypad.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File007]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\main.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File008]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\math_fun.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File009]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\rtc_driver.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File010]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\obj\timer.o
-Folder=Intermediary
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mcc18.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
-TraceCmdString=
-DebugOptions=-D__DEBUG
-[File011]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\app.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -157,7 +14,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File012]
+[File001]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\board.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -170,7 +27,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File013]
+[File002]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\digitdisplay.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -183,7 +40,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File014]
+[File003]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\heartBeat.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -196,7 +53,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File015]
+[File004]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\i2c_driver.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -209,7 +66,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File016]
+[File005]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\interruptvector.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -222,7 +79,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File017]
+[File006]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\linearkeypad.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -235,7 +92,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File018]
+[File007]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\main.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -248,7 +105,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File019]
+[File008]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\math_fun.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -261,7 +118,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File020]
+[File009]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\rtc_driver.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -274,7 +131,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File021]
+[File010]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\obj\timer.o
 Folder=Intermediary
 DeviceName=PIC18F4520
@@ -287,33 +144,7 @@ SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
 DebugOptions=-D__DEBUG
-[File022]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\output\Preset_UP_Timer.cof
-Folder=Output
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={96C98149-AA1B-4CF9-B967-FAE79CAB663C}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mplink.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=/o"$(BINDIR_)$(TARGETBASE).cof" /M"$(BINDIR_)$(TARGETBASE).map" /W
-TraceCmdString=
-DebugOptions=/z__MPLAB_DEBUG=1
-[File023]
-Location=C:\Documents and Settings\Saagar\Desktop\Work To Do\Preset_UP_Timer-master_V1\Preset_UP_Timer-master\output\Preset_UP_Timer.hex
-Folder=Output
-DeviceName=PIC18F4520
-LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
-LanguageToolID={96C98149-AA1B-4CF9-B967-FAE79CAB663C}
-LanguageToolLocation=C:\Program Files\Microchip\mplabc18\v3.46\bin\mplink.exe
-PPAD=$(BINDIR)|output||$(TMPDIR)|obj||$(AINDIR)||$(INCDIR)|include;C:\Program Files\Microchip\mplabc18\v3.46\h||$(LIBDIR)|C:\Program Files\Microchip\mplabc18\v3.46\lib||$(LKRDIR)||
-SOLK=<src>|source\app.c|source\board.c|source\digitdisplay.c|source\heartBeat.c|source\i2c_driver.c|source\interruptvector.c|source\linearkeypad.c|source\main.c|source\math_fun.c|source\rtc_driver.c|source\timer.c||<obj>||<lib>||<lkr>|18f4520.lkr||
-SuiteArgsString=
-ToolArgsString=/o"$(BINDIR_)$(TARGETBASE).cof" /M"$(BINDIR_)$(TARGETBASE).map" /W
-TraceCmdString=
-DebugOptions=/z__MPLAB_DEBUG=1
-[File024]
+[File011]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\output\Preset_UP_Timer.cof
 Folder=Output
 DeviceName=PIC18F4520
@@ -326,7 +157,7 @@ SuiteArgsString=
 ToolArgsString=/o"$(BINDIR_)$(TARGETBASE).cof" /M"$(BINDIR_)$(TARGETBASE).map" /W
 TraceCmdString=
 DebugOptions=/z__MPLAB_DEBUG=1
-[File025]
+[File012]
 Location=C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\output\Preset_UP_Timer.hex
 Folder=Output
 DeviceName=PIC18F4520

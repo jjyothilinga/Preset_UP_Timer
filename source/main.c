@@ -94,7 +94,7 @@
 */
 extern UINT16 heartBeatCount;
 extern UINT16 keypadUpdate_count;
-extern UINT16 comUpdateCount;
+extern UINT16 appUpdateCount;
 
 /*
 
@@ -146,7 +146,7 @@ UINT8 message[]="IDEONICS";
 *
 *------------------------------------------------------------------------------
 */
-#define DIGIT_REFRESH_PERIOD	(65535 - 5000)
+#define DIGIT_REFRESH_PERIOD	(65535 - 8000)
 #define TICK_PERIOD	(65535 - 8000)
 
 extern UINT16 heartBeatCount;
@@ -163,8 +163,8 @@ void main(void)
 
 	DigitDisplay_init(4); //Digit Display initialization
 
-	TMR0_init(TICK_PERIOD,0);		//initialize timer0
-	TMR1_init(DIGIT_REFRESH_PERIOD,DigitDisplay_task);	// Timer1 initialization
+	TMR0_init(DIGIT_REFRESH_PERIOD,DigitDisplay_task);		//initialize timer0
+//	TMR1_init(DIGIT_REFRESH_PERIOD,DigitDisplay_task);	// Timer1 initialization
 
 	APP_init();
 
@@ -189,13 +189,12 @@ void main(void)
 		{
 			LinearKeyPad_scan();
 			keypadUpdate_count = 0;
-			count++;
 		}
 		
-		if(count >= 50)
+		if(appUpdateCount >= 300)
 		{
 			APP_task();	
-			count = 0;
+			appUpdateCount = 0;
 		}
 	}
 
