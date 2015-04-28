@@ -191,7 +191,7 @@ void main(void)
 			keypadUpdate_count = 0;
 		}
 		
-		if(appUpdateCount >= 300)
+		if(appUpdateCount >= 250)
 		{
 			APP_task();	
 			appUpdateCount = 0;

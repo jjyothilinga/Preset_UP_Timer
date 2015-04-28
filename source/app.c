@@ -42,6 +42,7 @@ typedef struct _App
 	UINT8 hooter_reset;				//indicator for HOOTER off
 	UINT16 presetValue;				// store
 	UINT16 rtcValue;
+	BOOL countFlag;
 }APP;
 
 #pragma idata app_data
@@ -98,9 +99,13 @@ void APP_init( void )
 	//Maintain the hooter_reset value from EPROM
 	app.hooter_reset = Read_b_eep (EEPROM_HOOTER_ADDRESS + 1);  
 	Busy_eep();
-
+	if(HOOTER  == TRUE)
+	{
+		DigitDisplay_updateBuffer(app.presetBuffer);
+		CLOCK_LED = 1;	
+	}
 	//ON DOT_CONTROL leds
-	CLOCK_LED = 1;
+	CLOCK_LED = 0;
 
 
 }
@@ -129,8 +134,9 @@ void APP_task( void )
 			case HALT_STATE:
 			
 			//Check the keypress Status of COUNT_PB 
-			if (LinearKeyPad_getKeyState(COUNT_PB) == TRUE)
+			if ((LinearKeyPad_getKeyState(COUNT_PB) == TRUE) && (app.countFlag == FALSE))
 			{
+				app.countFlag = TRUE;
 				//Reset buffer and RTC
 				APP_resetDisplayBuffer();
 				DigitDisplay_updateBufferPartial(app.displayBuffer , 0, 4);
@@ -139,14 +145,28 @@ void APP_task( void )
 				//Turn off hooter
 				HOOTER = RESET;
 				app.hooter_reset = FALSE;
-				
+				/*
 				//Store the state
 				Write_b_eep( EEPROM_STATE_ADDRESS , COUNT_STATE);
 				Busy_eep( );
-		
+				//ON DOT_CONTROL leds
+				CLOCK_LED = 1;
 				//Change the state to STOP state
 				app.state = COUNT_STATE;
+				*/
 				
+			}
+			else if ((LinearKeyPad_getKeyState(COUNT_PB) == FALSE) && (app.countFlag == TRUE))
+			{
+				app.countFlag = FALSE;	
+				//Store the state
+				Write_b_eep( EEPROM_STATE_ADDRESS , COUNT_STATE);
+				Busy_eep( );
+				//ON DOT_CONTROL leds
+				CLOCK_LED = 1;
+				//Change the state to STOP state
+				app.state = COUNT_STATE;
+			
 			}
 			//Check the keypress Status of MODE_CHANGE_PB
 			else if (LinearKeyPad_getKeyState(MODE_CHANGE_PB) == TRUE)
@@ -171,19 +191,22 @@ void APP_task( void )
 					HOOTER = RESET;
 					Write_b_eep( EEPROM_HOOTER_ADDRESS, HOOTER);
 					Busy_eep( );
+					app.state = HALT_STATE;	
 				}
 
 			
 			break;
 
 			case SETTING_STATE:
-
+			
+				//ON DOT_CONTROL leds
+			CLOCK_LED = ~CLOCK_LED;
 			// Code to handle Digit index PB
 			if (LinearKeyPad_getKeyState(DIGIT_INDEX_PB ) == TRUE) 
 			{
 				app.blinkIndex++;
 
-				if(app.blinkIndex > (NO_OF_DIGITS - 1))
+				if(app.blinkIndex > (NO_OF_DIGITS -  1))
 					app.blinkIndex = 0 ;
 
 				DigitDisplay_blinkOn_ind(500, app.blinkIndex);
@@ -223,6 +246,7 @@ void APP_task( void )
 				Write_b_eep( EEPROM_STATE_ADDRESS , HALT_STATE);
 				Busy_eep( );
 				//Switch state
+				CLOCK_LED = 1;
 				app.state = HALT_STATE;	
 				
 			}
@@ -235,9 +259,14 @@ void APP_task( void )
 				app.hooter_set = FALSE;
 	
 				// On halt PB press change the state into HALT
-				if(LinearKeyPad_getKeyState(HALT_PB) == TRUE)
+			if ((LinearKeyPad_getKeyState(HALT_PB) == TRUE) && (app.countFlag == FALSE))
 				{
-	
+					app.countFlag = TRUE;
+				}
+
+			if ((LinearKeyPad_getKeyState(HALT_PB) == FALSE) && (app.countFlag == TRUE))
+				{
+					app.countFlag = FALSE;				
 					Write_b_eep( EEPROM_STATE_ADDRESS ,HALT_STATE);
 					Busy_eep( );
 	

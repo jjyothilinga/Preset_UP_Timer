@@ -1,5 +1,5 @@
 MPLINK 4.48, Linker
-Linker Map File - Created Mon Apr 27 13:36:22 2015
+Linker Map File - Created Tue Apr 28 15:29:41 2015
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -54,38 +54,38 @@ Linker Map File - Created Mon Apr 27 13:36:22 2015
                    .cinit    romdata   0x000050    program   0x00006e
          .code_math_fun.o       code   0x0000be    program   0x000bc4
        .code_rtc_driver.o       code   0x000c82    program   0x000934
-              .code_app.o       code   0x0015b6    program   0x000638
-     .code_digitdisplay.o       code   0x001bee    program   0x000612
-     .code_linearkeypad.o       code   0x002200    program   0x0002b2
-            .code_timer.o       code   0x0024b2    program   0x000292
-       .code_i2c_driver.o       code   0x002744    program   0x000246
-             .code_main.o       code   0x00298a    program   0x0000a6
-               _cinit_scn       code   0x002a30    program   0x00009e
-          .code_write_B.o       code   0x002ace    program   0x000066
-             .stringtable    romdata   0x002b34    program   0x00004c
-         .code_fxd3232u.o       code   0x002b80    program   0x000048
-           .code_read_B.o       code   0x002bc8    program   0x000044
-           .code_t1open.o       code   0x002c0c    program   0x000042
-            .code_board.o       code   0x002c4e    program   0x00003e
-                     PROG       code   0x002c8c    program   0x00003c
-          .code_t1write.o       code   0x002cc8    program   0x000038
-          .code_t0write.o       code   0x002d00    program   0x000038
-           .code_t0open.o       code   0x002d38    program   0x000038
-              D1KTCYXCODE       code   0x002d70    program   0x000020
-                    .code       code   0x002d90    program   0x000020
-             _startup_scn       code   0x002db0    program   0x00001c
-         .code_fxd0808u.o       code   0x002dcc    program   0x00001c
-        .code_heartBeat.o       code   0x002de8    program   0x00001a
-              D10TCYXCODE       code   0x002e02    program   0x000016
-         .code_busy_eep.o       code   0x002e18    program   0x000006
-               app_data_i    romdata   0x002e1e    program   0x000018
-               LKP_DATA_i    romdata   0x002e36    program   0x00000f
-           DISPLAY_DATA_i    romdata   0x002e45    program   0x00001b
-         .idata_timer.o_i    romdata   0x002e60    program   0x000014
-    .idata_rtc_driver.o_i    romdata   0x002e74    program   0x000028
-          .idata_main.o_i    romdata   0x002e9c    program   0x000009
-  .idata_digitdisplay.o_i    romdata   0x002ea5    program   0x00000b
-           .idata_app.o_i    romdata   0x002eb0    program   0x000017
+              .code_app.o       code   0x0015b6    program   0x000698
+     .code_digitdisplay.o       code   0x001c4e    program   0x000612
+     .code_linearkeypad.o       code   0x002260    program   0x0002b2
+            .code_timer.o       code   0x002512    program   0x000292
+       .code_i2c_driver.o       code   0x0027a4    program   0x000246
+             .code_main.o       code   0x0029ea    program   0x0000a6
+               _cinit_scn       code   0x002a90    program   0x00009e
+          .code_write_B.o       code   0x002b2e    program   0x000066
+             .stringtable    romdata   0x002b94    program   0x00004c
+         .code_fxd3232u.o       code   0x002be0    program   0x000048
+           .code_read_B.o       code   0x002c28    program   0x000044
+           .code_t1open.o       code   0x002c6c    program   0x000042
+            .code_board.o       code   0x002cae    program   0x00003e
+                     PROG       code   0x002cec    program   0x00003c
+          .code_t1write.o       code   0x002d28    program   0x000038
+          .code_t0write.o       code   0x002d60    program   0x000038
+           .code_t0open.o       code   0x002d98    program   0x000038
+              D1KTCYXCODE       code   0x002dd0    program   0x000020
+                    .code       code   0x002df0    program   0x000020
+             _startup_scn       code   0x002e10    program   0x00001c
+         .code_fxd0808u.o       code   0x002e2c    program   0x00001c
+        .code_heartBeat.o       code   0x002e48    program   0x00001a
+              D10TCYXCODE       code   0x002e62    program   0x000016
+         .code_busy_eep.o       code   0x002e78    program   0x000006
+               app_data_i    romdata   0x002e7e    program   0x000019
+               LKP_DATA_i    romdata   0x002e97    program   0x00000f
+           DISPLAY_DATA_i    romdata   0x002ea6    program   0x00001b
+         .idata_timer.o_i    romdata   0x002ec1    program   0x000014
+    .idata_rtc_driver.o_i    romdata   0x002ed5    program   0x000028
+          .idata_main.o_i    romdata   0x002efd    program   0x000009
+  .idata_digitdisplay.o_i    romdata   0x002f06    program   0x00000b
+           .idata_app.o_i    romdata   0x002f11    program   0x000017
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
     .config_300003_main.o    romdata   0x300003    program   0x000001
@@ -101,55 +101,55 @@ Linker Map File - Created Mon Apr 27 13:36:22 2015
                  .tmpdata      udata   0x000014       data   0x000008
                 DELAYDAT1      udata   0x00001c       data   0x000001
                    .stack      udata   0x000080       data   0x000080
-                 app_data      idata   0x000300       data   0x000018
-      .idata_rtc_driver.o      idata   0x000318       data   0x000028
-             DISPLAY_DATA      idata   0x000340       data   0x00001b
-             .idata_app.o      idata   0x00035b       data   0x000017
-           .idata_timer.o      idata   0x000372       data   0x000014
-      .udata_rtc_driver.o      udata   0x000386       data   0x000010
-                 LKP_DATA      idata   0x000396       data   0x00000f
-    .idata_digitdisplay.o      idata   0x0003a5       data   0x00000b
-           .udata_c018i.o      udata   0x0003b0       data   0x00000a
-            .idata_main.o      idata   0x0003ba       data   0x000009
-           .udata_board.o      udata   0x0003c3       data   0x000001
-       .idata_heartBeat.o      idata   0x0003c4       data   0x000001
-        .idata_fxd3232u.o      idata   0x0003c5       data   0x000000
-          .udata_t0open.o      udata   0x0003c5       data   0x000000
-          .idata_t0open.o      idata   0x0003c5       data   0x000000
-        .udata_fxd3232u.o      udata   0x0003c5       data   0x000000
-        .idata_fxd1616u.o      idata   0x0003c5       data   0x000000
-        .udata_fxd1616u.o      udata   0x0003c5       data   0x000000
-          .udata_t1open.o      udata   0x0003c5       data   0x000000
-          .idata_t1open.o      idata   0x0003c5       data   0x000000
-          .udata_read_B.o      udata   0x0003c5       data   0x000000
-          .idata_read_B.o      idata   0x0003c5       data   0x000000
-         .udata_t0write.o      udata   0x0003c5       data   0x000000
-         .idata_t0write.o      idata   0x0003c5       data   0x000000
-         .udata_t1write.o      udata   0x0003c5       data   0x000000
-         .idata_t1write.o      idata   0x0003c5       data   0x000000
-         .udata_write_B.o      udata   0x0003c5       data   0x000000
-         .idata_write_B.o      idata   0x0003c5       data   0x000000
-          .udata___init.o      udata   0x0003c5       data   0x000000
-          .idata___init.o      idata   0x0003c5       data   0x000000
-             .udata_app.o      udata   0x0003c5       data   0x000000
-           .idata_board.o      idata   0x0003c5       data   0x000000
-    .udata_digitdisplay.o      udata   0x0003c5       data   0x000000
-       .udata_heartBeat.o      udata   0x0003c5       data   0x000000
-      .udata_i2c_driver.o      udata   0x0003c5       data   0x000000
-      .idata_i2c_driver.o      idata   0x0003c5       data   0x000000
- .udata_interruptvector.o      udata   0x0003c5       data   0x000000
- .idata_interruptvector.o      idata   0x0003c5       data   0x000000
-    .udata_linearkeypad.o      udata   0x0003c5       data   0x000000
-    .idata_linearkeypad.o      idata   0x0003c5       data   0x000000
-            .udata_main.o      udata   0x0003c5       data   0x000000
-        .udata_math_fun.o      udata   0x0003c5       data   0x000000
-        .idata_math_fun.o      idata   0x0003c5       data   0x000000
-           .udata_timer.o      udata   0x0003c5       data   0x000000
-        .udata_busy_eep.o      udata   0x0003c5       data   0x000000
-        .idata_busy_eep.o      idata   0x0003c5       data   0x000000
-           .idata_c018i.o      idata   0x0003c5       data   0x000000
-        .udata_fxd0808u.o      udata   0x0003c5       data   0x000000
-        .idata_fxd0808u.o      idata   0x0003c5       data   0x000000
+                 app_data      idata   0x000300       data   0x000019
+      .idata_rtc_driver.o      idata   0x000319       data   0x000028
+             DISPLAY_DATA      idata   0x000341       data   0x00001b
+             .idata_app.o      idata   0x00035c       data   0x000017
+           .idata_timer.o      idata   0x000373       data   0x000014
+      .udata_rtc_driver.o      udata   0x000387       data   0x000010
+                 LKP_DATA      idata   0x000397       data   0x00000f
+    .idata_digitdisplay.o      idata   0x0003a6       data   0x00000b
+           .udata_c018i.o      udata   0x0003b1       data   0x00000a
+            .idata_main.o      idata   0x0003bb       data   0x000009
+           .udata_board.o      udata   0x0003c4       data   0x000001
+       .idata_heartBeat.o      idata   0x0003c5       data   0x000001
+        .idata_fxd3232u.o      idata   0x0003c6       data   0x000000
+          .udata_t0open.o      udata   0x0003c6       data   0x000000
+          .idata_t0open.o      idata   0x0003c6       data   0x000000
+        .udata_fxd3232u.o      udata   0x0003c6       data   0x000000
+        .idata_fxd1616u.o      idata   0x0003c6       data   0x000000
+        .udata_fxd1616u.o      udata   0x0003c6       data   0x000000
+          .udata_t1open.o      udata   0x0003c6       data   0x000000
+          .idata_t1open.o      idata   0x0003c6       data   0x000000
+          .udata_read_B.o      udata   0x0003c6       data   0x000000
+          .idata_read_B.o      idata   0x0003c6       data   0x000000
+         .udata_t0write.o      udata   0x0003c6       data   0x000000
+         .idata_t0write.o      idata   0x0003c6       data   0x000000
+         .udata_t1write.o      udata   0x0003c6       data   0x000000
+         .idata_t1write.o      idata   0x0003c6       data   0x000000
+         .udata_write_B.o      udata   0x0003c6       data   0x000000
+         .idata_write_B.o      idata   0x0003c6       data   0x000000
+          .udata___init.o      udata   0x0003c6       data   0x000000
+          .idata___init.o      idata   0x0003c6       data   0x000000
+             .udata_app.o      udata   0x0003c6       data   0x000000
+           .idata_board.o      idata   0x0003c6       data   0x000000
+    .udata_digitdisplay.o      udata   0x0003c6       data   0x000000
+       .udata_heartBeat.o      udata   0x0003c6       data   0x000000
+      .udata_i2c_driver.o      udata   0x0003c6       data   0x000000
+      .idata_i2c_driver.o      idata   0x0003c6       data   0x000000
+ .udata_interruptvector.o      udata   0x0003c6       data   0x000000
+ .idata_interruptvector.o      idata   0x0003c6       data   0x000000
+    .udata_linearkeypad.o      udata   0x0003c6       data   0x000000
+    .idata_linearkeypad.o      idata   0x0003c6       data   0x000000
+            .udata_main.o      udata   0x0003c6       data   0x000000
+        .udata_math_fun.o      udata   0x0003c6       data   0x000000
+        .idata_math_fun.o      idata   0x0003c6       data   0x000000
+           .udata_timer.o      udata   0x0003c6       data   0x000000
+        .udata_busy_eep.o      udata   0x0003c6       data   0x000000
+        .idata_busy_eep.o      idata   0x0003c6       data   0x000000
+           .idata_c018i.o      idata   0x0003c6       data   0x000000
+        .udata_fxd0808u.o      udata   0x0003c6       data   0x000000
+        .idata_fxd0808u.o      idata   0x0003c6       data   0x000000
             SFR_UNBANKED0      udata   0x000f80       data   0x000080
 
 
@@ -158,28 +158,28 @@ Linker Map File - Created Mon Apr 27 13:36:22 2015
                                Start         End      
                            ---------   ---------      
                             0x000000    0x00004c      
-                            0x000050    0x002ec6      
+                            0x000050    0x002f27      
                             0x300001    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            11983 out of 33048 program addresses used, program memory utilization is 36%
+            12080 out of 33048 program addresses used, program memory utilization is 36%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-           APP_conversion   0x001a94    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+           APP_conversion   0x001af4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
                  APP_init   0x0015b6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-   APP_resetDisplayBuffer   0x001ae6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-    APP_resetPresetBuffer   0x001b40    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-                 APP_task   0x0016b0    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-            APP_updateRTC   0x001b9a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+   APP_resetDisplayBuffer   0x001b46    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+    APP_resetPresetBuffer   0x001ba0    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+                 APP_task   0x0016c6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+            APP_updateRTC   0x001bfa    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
                   BCD2HEX   0x00014c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
                  BCDtoBin   0x000af8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
-                 BRD_init   0x002c4e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\board.c
+                 BRD_init   0x002cae    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\board.c
                  BinToBCD   0x000b26    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
-                 Busy_eep   0x002e18    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\busy_eep.c
+                 Busy_eep   0x002e78    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\busy_eep.c
 ConvertAndDisplay16BitValue   0x0001ea    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
 ConvertAndDisplay32BitValue   0x0005b6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
 ConvertAndDisplay8BitValue   0x00047a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
@@ -188,82 +188,82 @@ ConvertAndDisplay8BitValue   0x00047a    program     extern C:\Users\IDEONICS-BN
   ConvertTime12to24Format   0x001156    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
   ConvertTime24to12Format   0x000fc6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
 ConvertUnPackedAsciiToPacked16BitHexValue   0x000b6c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
-                    D10_1   0x002e12    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                     D10x   0x002e0a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                    D1K_1   0x002d7c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x002d7a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-              Delay10TCYx   0x002e02    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-              Delay1KTCYx   0x002d70    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-       DigitDisplay_DotOn   0x001fe4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-    DigitDisplay_blinkOff   0x001f4a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-     DigitDisplay_blinkOn   0x001f12    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
- DigitDisplay_blinkOn_ind   0x00216e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-       DigitDisplay_clear   0x001f58    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-        DigitDisplay_init   0x001bee    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-        DigitDisplay_task   0x001cea    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-DigitDisplay_updateBuffer   0x001d70    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-DigitDisplay_updateBufferBinary   0x001e3a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-DigitDisplay_updateBufferPartial   0x00208e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
- DigitDisplay_updateDigit   0x001e8e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+                    D10_1   0x002e72    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                     D10x   0x002e6a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                    D1K_1   0x002ddc    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x002dda    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+              Delay10TCYx   0x002e62    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+              Delay1KTCYx   0x002dd0    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+       DigitDisplay_DotOn   0x002044    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+    DigitDisplay_blinkOff   0x001faa    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+     DigitDisplay_blinkOn   0x001f72    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+ DigitDisplay_blinkOn_ind   0x0021ce    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+       DigitDisplay_clear   0x001fb8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+        DigitDisplay_init   0x001c4e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+        DigitDisplay_task   0x001d4a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+DigitDisplay_updateBuffer   0x001dd0    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+DigitDisplay_updateBufferBinary   0x001e9a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+DigitDisplay_updateBufferPartial   0x0020ee    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+ DigitDisplay_updateDigit   0x001eee    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
          EnableInterrupts   0x00001a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\interruptvector.c
-                 FXD0808U   0x002dcc    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
+                 FXD0808U   0x002e2c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
                  FXD1616U   0x000020    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                 FXD3232U   0x002b80    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
-                 FXM1616U   0x002c8c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616u.asm
-               GetAppTime   0x0026e4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                  HB_init   0x002de8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
-                  HB_task   0x002dee    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
+                 FXD3232U   0x002be0    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
+                 FXM1616U   0x002cec    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616u.asm
+               GetAppTime   0x002744    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                  HB_init   0x002e48    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
+                  HB_task   0x002e4e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
                   HEX2BCD   0x000186    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
-            InitializeI2C   0x002744    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+            InitializeI2C   0x0027a4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
             InitializeRtc   0x00153c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
                   Int2Day   0x000c82    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
                 Int2Month   0x000cba    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
- LinearKeyPad_getKeyState   0x0022fe    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-        LinearKeyPad_init   0x002200    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-       LinearKeyPad_reset   0x002326    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-        LinearKeyPad_scan   0x0022b4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-   LinearKeyPad_updateKey   0x002230    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-               OpenTimer0   0x002d38    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
-               OpenTimer1   0x002c0c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1open.c
-              ReadByteI2C   0x002914    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-                  ReadI2C   0x002872    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+ LinearKeyPad_getKeyState   0x00235e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+        LinearKeyPad_init   0x002260    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+       LinearKeyPad_reset   0x002386    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+        LinearKeyPad_scan   0x002314    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+LinearKeyPad_scan_from_to   0x0022bc    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+   LinearKeyPad_updateKey   0x002290    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+               OpenTimer0   0x002d98    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
+               OpenTimer1   0x002c6c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1open.c
+              ReadByteI2C   0x002974    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                  ReadI2C   0x0028d2    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
        ReadRtcTimeAndDate   0x000d00    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               Read_b_eep   0x002bc8    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\read_B.c
-             ResetAppTime   0x002734    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                 ResetI2C   0x0027a8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+               Read_b_eep   0x002c28    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\read_B.c
+             ResetAppTime   0x002794    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                 ResetI2C   0x002808    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
               SetHourMode   0x000f5c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-                 StartI2C   0x00275c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-                  StopI2C   0x002788    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                 StartI2C   0x0027bc    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                  StopI2C   0x0027e8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
           StoreSystemDate   0x00140c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
            StoreSystemDay   0x001504    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
           StoreSystemTime   0x001316    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-                 TMR0_ISR   0x0024b2    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                TMR0_init   0x002656    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                 TMR1_ISR   0x00259c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                TMR1_init   0x00269c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                 TMR0_ISR   0x002512    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                TMR0_init   0x0026b6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                 TMR1_ISR   0x0025fc    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                TMR1_init   0x0026fc    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
   UpdateRealTimeClockTask   0x001590    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-             WriteByteI2C   0x002958    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-                 WriteI2C   0x0027e4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+             WriteByteI2C   0x0029b8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                 WriteI2C   0x002844    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
       WriteRtcTimeAndDate   0x000e50    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              WriteTimer0   0x002d00    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0write.c
-              WriteTimer1   0x002cc8    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1write.c
-              Write_b_eep   0x002ace    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\write_B.c
-        _D10TCYXCODE_000A   0x002e0c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x002e0e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x002e10    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D1KTCYXCODE_0010   0x002d80    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x002d86    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+              WriteTimer0   0x002d60    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0write.c
+              WriteTimer1   0x002d28    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1write.c
+              Write_b_eep   0x002b2e    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\write_B.c
+        _D10TCYXCODE_000A   0x002e6c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x002e6e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x002e70    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D1KTCYXCODE_0010   0x002de0    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x002de6    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
            ___if_lbl00001   0x000010    program     static                          
            ___if_lbl00002   0x000018    program     static                          
-       ___return_lbl00000   0x002de6    program     static                          
+       ___return_lbl00000   0x002e46    program     static                          
        ___return_lbl00000   0x000018    program     static                          
        ___return_lbl00000   0x00004a    program     static                          
-       ___return_lbl00000   0x002bc6    program     static                          
-       ___return_lbl00000   0x002c00    program     static                          
+       ___return_lbl00000   0x002c26    program     static                          
+       ___return_lbl00000   0x002c60    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x002dca    program     static                          
-       ___return_lbl00002   0x002acc    program     static                          
+       ___return_lbl00001   0x002e2a    program     static                          
+       ___return_lbl00002   0x002b2c    program     static                          
                __config_0   0x300001    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
                __config_1   0x300002    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
               __config_10   0x30000d    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
@@ -276,51 +276,51 @@ LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG
                __config_8   0x30000b    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
                __config_9   0x30000c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
                    __init   0x000006    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-               __string_0   0x002b7c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_1   0x002b78    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_10   0x002b54    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_11   0x002b50    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_12   0x002b4c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_13   0x002b48    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_14   0x002b44    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_15   0x002b40    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_16   0x002b3c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_17   0x002b38    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_18   0x002b34    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_2   0x002b74    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_3   0x002b70    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_4   0x002b6c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_5   0x002b68    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_6   0x002b64    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_7   0x002b60    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_8   0x002b5c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_9   0x002b58    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-            __zero_memory   0x002d90    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                _do_cinit   0x002a30    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               __string_0   0x002bdc    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_1   0x002bd8    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_10   0x002bb4    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_11   0x002bb0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_12   0x002bac    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_13   0x002ba8    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_14   0x002ba4    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_15   0x002ba0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_16   0x002b9c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_17   0x002b98    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_18   0x002b94    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_2   0x002bd4    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_3   0x002bd0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_4   0x002bcc    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_5   0x002bc8    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_6   0x002bc4    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_7   0x002bc0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_8   0x002bbc    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_9   0x002bb8    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+            __zero_memory   0x002df0    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                _do_cinit   0x002a90    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                   _false   0x002bc2    program     static                          
-                 _startup   0x002db0    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x002da6    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                copy_loop   0x002aa2    program     static                          
-            copy_one_byte   0x002aa8    program     static                          
-                     done   0x002acc    program     static                          
-             done_copying   0x002ab6    program     static                          
-                  endloop   0x002de2    program     static                          
+                   _false   0x002c22    program     static                          
+                 _startup   0x002e10    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x002e06    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                copy_loop   0x002b02    program     static                          
+            copy_one_byte   0x002b08    program     static                          
+                     done   0x002b2c    program     static                          
+             done_copying   0x002b16    program     static                          
+                  endloop   0x002e42    program     static                          
                   endloop   0x000046    program     static                          
            high_interrupt   0x000008    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\interruptvector.c
-                     loop   0x002dd4    program     static                          
+                     loop   0x002e34    program     static                          
                      loop   0x00002a    program     static                          
-                     loop   0x002dc0    program     static                          
-                     loop   0x002b8e    program     static                          
-                   loop_h   0x002d9e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x002da8    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                     main   0x00298a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
-           readKeyPadPort   0x002370    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-                     test   0x002a4a    program     static                          
-                updateKey   0x0023a2    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-                 validate   0x00204a    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-       writeToDisplayPort   0x001f8c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-               zero_block   0x002d9e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     loop   0x002e20    program     static                          
+                     loop   0x002bee    program     static                          
+                   loop_h   0x002dfe    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x002e08    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     main   0x0029ea    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
+           readKeyPadPort   0x0023d0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+                     test   0x002aaa    program     static                          
+                updateKey   0x002402    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+                 validate   0x0020aa    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+       writeToDisplayPort   0x001fec    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+               zero_block   0x002dfe    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON0   0x000fc2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                ADCON0bits   0x000fc2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON1   0x000fc1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -330,7 +330,7 @@ LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG
                     ADRES   0x000fc3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADRESH   0x000fc4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADRESL   0x000fc3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-             AppTimestamp   0x000382       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+             AppTimestamp   0x000383       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
                   BAUDCON   0x000fb8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
               BAUDCONbits   0x000fb8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                   BAUDCTL   0x000fb8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -360,7 +360,7 @@ LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG
                  DDRDbits   0x000f95       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                      DDRE   0x000f96       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                  DDREbits   0x000f96       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   DayStr   0x000319       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+                   DayStr   0x00031a       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
             DelayCounter1   0x00001c       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\delayd1.asm
                   ECCP1AS   0x000fb6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
               ECCP1ASbits   0x000fb6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -409,7 +409,7 @@ LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG
                  LATEbits   0x000f8d       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    LVDCON   0x000fd2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                LVDCONbits   0x000fd2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                 MonthStr   0x000327       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+                 MonthStr   0x000328       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
                    OSCCON   0x000fd3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                OSCCONbits   0x000fd3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                   OSCTUNE   0x000f9b       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -459,8 +459,8 @@ LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG
                     RCREG   0x000fae       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     RCSTA   0x000fab       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 RCSTAbits   0x000fab       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-             RegistersRTC   0x000386       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-             SEVENSEGMENT   0x0003a5       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+             RegistersRTC   0x000387       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+             SEVENSEGMENT   0x0003a6       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
                      SIGN   0x000000       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                     SPBRG   0x000faf       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    SPBRGH   0x000fb0       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -513,8 +513,8 @@ LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG
                     TXREG   0x000fad       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     TXSTA   0x000fac       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 TXSTAbits   0x000fac       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-            TimeClockMode   0x000395       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-  TimeClockUpdateRequired   0x000318       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+            TimeClockMode   0x000396       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+  TimeClockUpdateRequired   0x000319       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
                         W   0x000fe8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    WDTCON   0x000fd1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                WDTCONbits   0x000fd1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -553,27 +553,27 @@ LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG
                   __tmp_0   0x000014       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
                   __tmp_0   0x000014       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
                       app   0x000300       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-           appUpdateCount   0x00037e       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                curr_byte   0x0003b3       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x0003b5       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 data_ptr   0x0003b7       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-             digitDisplay   0x000340       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-           heartBeatCount   0x00037a       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-       keypadUpdate_count   0x00037c       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                     keys   0x00039b       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-                 ledState   0x0003c3       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\board.c
-                 ledState   0x0003c4       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
-                      max   0x000361       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-                  message   0x0003ba       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
-                portValue   0x000396       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-                  prevSec   0x00033f       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-                     prom   0x0003b0       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-       readTimeDateBuffer   0x000365       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-                stRtcRegs   0x00038d       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-     timeStampUpdateCount   0x000380       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                      tmr   0x000372       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                 txBuffer   0x00035b       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-      writeTimeDateBuffer   0x00036b       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+           appUpdateCount   0x00037f       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                curr_byte   0x0003b4       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x0003b6       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 data_ptr   0x0003b8       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+             digitDisplay   0x000341       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+           heartBeatCount   0x00037b       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+       keypadUpdate_count   0x00037d       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                     keys   0x00039c       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+                 ledState   0x0003c4       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\board.c
+                 ledState   0x0003c5       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
+                      max   0x000362       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+                  message   0x0003bb       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
+                portValue   0x000397       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+                  prevSec   0x000340       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+                     prom   0x0003b1       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+       readTimeDateBuffer   0x000366       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+                stRtcRegs   0x00038e       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+     timeStampUpdateCount   0x000381       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                      tmr   0x000373       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                 txBuffer   0x00035c       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+      writeTimeDateBuffer   0x00036c       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
 
 
 
@@ -615,112 +615,112 @@ ConvertUnPackedAsciiToPacked16BitHexValue   0x000b6c    program     extern C:\Us
             InitializeRtc   0x00153c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
   UpdateRealTimeClockTask   0x001590    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
                  APP_init   0x0015b6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-                 APP_task   0x0016b0    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-           APP_conversion   0x001a94    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-   APP_resetDisplayBuffer   0x001ae6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-    APP_resetPresetBuffer   0x001b40    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-            APP_updateRTC   0x001b9a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-        DigitDisplay_init   0x001bee    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-        DigitDisplay_task   0x001cea    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-DigitDisplay_updateBuffer   0x001d70    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-DigitDisplay_updateBufferBinary   0x001e3a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
- DigitDisplay_updateDigit   0x001e8e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-     DigitDisplay_blinkOn   0x001f12    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-    DigitDisplay_blinkOff   0x001f4a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-       DigitDisplay_clear   0x001f58    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-       writeToDisplayPort   0x001f8c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-       DigitDisplay_DotOn   0x001fe4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-                 validate   0x00204a    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-DigitDisplay_updateBufferPartial   0x00208e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
- DigitDisplay_blinkOn_ind   0x00216e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-        LinearKeyPad_init   0x002200    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-   LinearKeyPad_updateKey   0x002230    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-        LinearKeyPad_scan   0x0022b4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
- LinearKeyPad_getKeyState   0x0022fe    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-       LinearKeyPad_reset   0x002326    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-           readKeyPadPort   0x002370    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-                updateKey   0x0023a2    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-                 TMR0_ISR   0x0024b2    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                 TMR1_ISR   0x00259c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                TMR0_init   0x002656    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-                TMR1_init   0x00269c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-               GetAppTime   0x0026e4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-             ResetAppTime   0x002734    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-            InitializeI2C   0x002744    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-                 StartI2C   0x00275c    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-                  StopI2C   0x002788    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-                 ResetI2C   0x0027a8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-                 WriteI2C   0x0027e4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-                  ReadI2C   0x002872    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-              ReadByteI2C   0x002914    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-             WriteByteI2C   0x002958    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
-                     main   0x00298a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
-                _do_cinit   0x002a30    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x002a4a    program     static                          
-                copy_loop   0x002aa2    program     static                          
-            copy_one_byte   0x002aa8    program     static                          
-             done_copying   0x002ab6    program     static                          
-                     done   0x002acc    program     static                          
-       ___return_lbl00002   0x002acc    program     static                          
-              Write_b_eep   0x002ace    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\write_B.c
-              __string_18   0x002b34    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_17   0x002b38    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_16   0x002b3c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_15   0x002b40    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_14   0x002b44    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_13   0x002b48    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_12   0x002b4c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_11   0x002b50    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-              __string_10   0x002b54    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_9   0x002b58    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_8   0x002b5c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_7   0x002b60    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_6   0x002b64    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_5   0x002b68    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_4   0x002b6c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_3   0x002b70    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_2   0x002b74    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_1   0x002b78    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-               __string_0   0x002b7c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-                 FXD3232U   0x002b80    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
-                     loop   0x002b8e    program     static                          
-                   _false   0x002bc2    program     static                          
-       ___return_lbl00000   0x002bc6    program     static                          
-               Read_b_eep   0x002bc8    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\read_B.c
-       ___return_lbl00000   0x002c00    program     static                          
-               OpenTimer1   0x002c0c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1open.c
-                 BRD_init   0x002c4e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\board.c
-                 FXM1616U   0x002c8c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616u.asm
-              WriteTimer1   0x002cc8    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1write.c
-              WriteTimer0   0x002d00    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0write.c
-               OpenTimer0   0x002d38    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
-              Delay1KTCYx   0x002d70    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x002d7a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                    D1K_1   0x002d7c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0010   0x002d80    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x002d86    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-            __zero_memory   0x002d90    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_h   0x002d9e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-               zero_block   0x002d9e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                compare_l   0x002da6    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x002da8    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                 _startup   0x002db0    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x002dc0    program     static                          
-       ___return_lbl00001   0x002dca    program     static                          
-                 FXD0808U   0x002dcc    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
-                     loop   0x002dd4    program     static                          
-                  endloop   0x002de2    program     static                          
-       ___return_lbl00000   0x002de6    program     static                          
-                  HB_init   0x002de8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
-                  HB_task   0x002dee    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
-              Delay10TCYx   0x002e02    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                     D10x   0x002e0a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000A   0x002e0c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x002e0e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x002e10    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                    D10_1   0x002e12    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                 Busy_eep   0x002e18    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\busy_eep.c
+                 APP_task   0x0016c6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+           APP_conversion   0x001af4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+   APP_resetDisplayBuffer   0x001b46    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+    APP_resetPresetBuffer   0x001ba0    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+            APP_updateRTC   0x001bfa    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+        DigitDisplay_init   0x001c4e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+        DigitDisplay_task   0x001d4a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+DigitDisplay_updateBuffer   0x001dd0    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+DigitDisplay_updateBufferBinary   0x001e9a    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+ DigitDisplay_updateDigit   0x001eee    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+     DigitDisplay_blinkOn   0x001f72    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+    DigitDisplay_blinkOff   0x001faa    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+       DigitDisplay_clear   0x001fb8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+       writeToDisplayPort   0x001fec    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+       DigitDisplay_DotOn   0x002044    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+                 validate   0x0020aa    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+DigitDisplay_updateBufferPartial   0x0020ee    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+ DigitDisplay_blinkOn_ind   0x0021ce    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+        LinearKeyPad_init   0x002260    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+   LinearKeyPad_updateKey   0x002290    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+LinearKeyPad_scan_from_to   0x0022bc    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+        LinearKeyPad_scan   0x002314    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+ LinearKeyPad_getKeyState   0x00235e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+       LinearKeyPad_reset   0x002386    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+           readKeyPadPort   0x0023d0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+                updateKey   0x002402    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+                 TMR0_ISR   0x002512    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                 TMR1_ISR   0x0025fc    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                TMR0_init   0x0026b6    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+                TMR1_init   0x0026fc    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+               GetAppTime   0x002744    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+             ResetAppTime   0x002794    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+            InitializeI2C   0x0027a4    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                 StartI2C   0x0027bc    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                  StopI2C   0x0027e8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                 ResetI2C   0x002808    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                 WriteI2C   0x002844    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                  ReadI2C   0x0028d2    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+              ReadByteI2C   0x002974    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+             WriteByteI2C   0x0029b8    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\i2c_driver.c
+                     main   0x0029ea    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
+                _do_cinit   0x002a90    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x002aaa    program     static                          
+                copy_loop   0x002b02    program     static                          
+            copy_one_byte   0x002b08    program     static                          
+             done_copying   0x002b16    program     static                          
+                     done   0x002b2c    program     static                          
+       ___return_lbl00002   0x002b2c    program     static                          
+              Write_b_eep   0x002b2e    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\write_B.c
+              __string_18   0x002b94    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_17   0x002b98    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_16   0x002b9c    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_15   0x002ba0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_14   0x002ba4    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_13   0x002ba8    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_12   0x002bac    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_11   0x002bb0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+              __string_10   0x002bb4    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_9   0x002bb8    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_8   0x002bbc    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_7   0x002bc0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_6   0x002bc4    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_5   0x002bc8    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_4   0x002bcc    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_3   0x002bd0    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_2   0x002bd4    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_1   0x002bd8    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+               __string_0   0x002bdc    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+                 FXD3232U   0x002be0    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
+                     loop   0x002bee    program     static                          
+                   _false   0x002c22    program     static                          
+       ___return_lbl00000   0x002c26    program     static                          
+               Read_b_eep   0x002c28    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\read_B.c
+       ___return_lbl00000   0x002c60    program     static                          
+               OpenTimer1   0x002c6c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1open.c
+                 BRD_init   0x002cae    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\board.c
+                 FXM1616U   0x002cec    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616u.asm
+              WriteTimer1   0x002d28    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1write.c
+              WriteTimer0   0x002d60    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0write.c
+               OpenTimer0   0x002d98    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
+              Delay1KTCYx   0x002dd0    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x002dda    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                    D1K_1   0x002ddc    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0010   0x002de0    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x002de6    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+            __zero_memory   0x002df0    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_h   0x002dfe    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+               zero_block   0x002dfe    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                compare_l   0x002e06    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x002e08    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x002e10    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x002e20    program     static                          
+       ___return_lbl00001   0x002e2a    program     static                          
+                 FXD0808U   0x002e2c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
+                     loop   0x002e34    program     static                          
+                  endloop   0x002e42    program     static                          
+       ___return_lbl00000   0x002e46    program     static                          
+                  HB_init   0x002e48    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
+                  HB_task   0x002e4e    program     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
+              Delay10TCYx   0x002e62    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                     D10x   0x002e6a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000A   0x002e6c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x002e6e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x002e70    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                    D10_1   0x002e72    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                 Busy_eep   0x002e78    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\EEP\busy_eep.c
                __config_0   0x300001    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
                __config_1   0x300002    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
                __config_2   0x300003    program     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
@@ -768,34 +768,34 @@ LinearKeyPad_scan_from_to   0x00225c    program     extern C:\Users\IDEONICS-BNG
                   __tmp_0   0x000014       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\math_fun.c
             DelayCounter1   0x00001c       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\delayd1.asm
                       app   0x000300       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-  TimeClockUpdateRequired   0x000318       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-                   DayStr   0x000319       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-                 MonthStr   0x000327       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-                  prevSec   0x00033f       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-             digitDisplay   0x000340       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-                 txBuffer   0x00035b       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-                      max   0x000361       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-       readTimeDateBuffer   0x000365       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-      writeTimeDateBuffer   0x00036b       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
-                      tmr   0x000372       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-           heartBeatCount   0x00037a       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-       keypadUpdate_count   0x00037c       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-           appUpdateCount   0x00037e       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-     timeStampUpdateCount   0x000380       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-             AppTimestamp   0x000382       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
-             RegistersRTC   0x000386       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-                stRtcRegs   0x00038d       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-            TimeClockMode   0x000395       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
-                portValue   0x000396       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-                     keys   0x00039b       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
-             SEVENSEGMENT   0x0003a5       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
-                     prom   0x0003b0       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                curr_byte   0x0003b3       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x0003b5       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 data_ptr   0x0003b7       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                  message   0x0003ba       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
-                 ledState   0x0003c3       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\board.c
-                 ledState   0x0003c4       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
+  TimeClockUpdateRequired   0x000319       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+                   DayStr   0x00031a       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+                 MonthStr   0x000328       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+                  prevSec   0x000340       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+             digitDisplay   0x000341       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+                 txBuffer   0x00035c       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+                      max   0x000362       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+       readTimeDateBuffer   0x000366       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+      writeTimeDateBuffer   0x00036c       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\app.c
+                      tmr   0x000373       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+           heartBeatCount   0x00037b       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+       keypadUpdate_count   0x00037d       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+           appUpdateCount   0x00037f       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+     timeStampUpdateCount   0x000381       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+             AppTimestamp   0x000383       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\timer.c
+             RegistersRTC   0x000387       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+                stRtcRegs   0x00038e       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+            TimeClockMode   0x000396       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\rtc_driver.c
+                portValue   0x000397       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+                     keys   0x00039c       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\linearkeypad.c
+             SEVENSEGMENT   0x0003a6       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\digitdisplay.c
+                     prom   0x0003b1       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                curr_byte   0x0003b4       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x0003b6       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 data_ptr   0x0003b8       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                  message   0x0003bb       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\main.c
+                 ledState   0x0003c4       data     static C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\board.c
+                 ledState   0x0003c5       data     extern C:\Users\IDEONICS-BNG\Documents\GitHub\Preset_UP_Timer\source\heartBeat.c
                     PORTA   0x000f80       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 PORTAbits   0x000f80       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     PORTB   0x000f81       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
